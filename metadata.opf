@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">cd7b64fe-c8d1-4cdd-bd16-35d0c87005b6</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3364a874-71df-4ec5-8c64-71bb0f50eb51</dc:identifier>
+        <dc:title>Something More Profound</dc:title>
+        <dc:creator opf:file-as="Unknown" opf:role="aut">Afsheen Bigdeli</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (3.21.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:language>en</dc:language>
+        <meta content="{}" name="calibre:author_link_map"/>
+    </metadata>
+    <guide/>
+</package>
