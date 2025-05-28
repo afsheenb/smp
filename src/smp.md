@@ -1,95 +1,43 @@
 ---
 title: "Something More Profound"
+subtitle: "The Political Economy Of Network Protocols"
 author: "Afsheen Bigdeli"
 language: "en"
 date: "2025-05-01"
-cover-image: "smp_cover.png"
+cover-image: "src/images/smp_cover.png"
 toc: true
+toc-title: Table of Contents
+geometry:
+  - paperwidth=6in
+  - paperheight=9in
+documentclass: book
+indent: true
+downloads:
+  - type: PDF
+    link: smp.pdf
+  - type: ePUB
+    link: smp.epub
 ---
 
-# Something More Profound: The Political Economy Of Network Protocols
+# Copyright
 
----
----
+© 2025 Afsheen Bigdeli  
+Git commit 62bb2fd350ac6842f28cfa241bf0b4bc77e59ac4.  
+All rights reserved.
 
+# Dedication
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p align="center"><em>For Remolino and Koochooloo</em></p>
+```{=latex}
+\begin{center}
+\textit{For Remolino and Koochooloo}
+\end{center}
+```
 
+```{=html}
+<p style="text-align:center;"><em>For Remolino and Koochooloo</em></p>
+```
 
----
----
-
-# Table of Contents
-
-*   [Prologue](#prologue)
-*   [Chapter 1: So... What's A Protocol, Anyway?](#chapter-1-so-whats-a-protocol-anyway)
-    *   [Layering and flexibility](#layering-and-flexibility)
-    *   [Takeaways](#takeaways)
-    *   [A point of clarification](#a-point-of-clarification)
-*   [Chapter 2: Standard Wars - What Are They Good For?](#chapter-2-standard-wars---what-are-they-good-for)
-    *   [The OSI Model](#the-osi-model)
-    *   [OSI's top-down hierarchy vs. TCP/IP's bottom-up adoption](#osis-top-down-hierarchy-vs-tcpips-bottom-up-adoption)
-    *   [Takeaways](#takeaways-1)
-*   [Chapter 3: If You Can't Beat Them, Co-Opt Them: CLNP vs IPv6 As The Future Of TCP/IP](#chapter-3-if-you-cant-beat-them-co-opt-them-clnp-vs-ipv6-as-the-future-of-tcpip)
-    *   [Switching Costs and Lock-In](#switching-costs-and-lock-in)
-    *   [Takeaways](#takeaways-2)
-*   [Chapter 4: DNS In Anger - From Centralized Directories to Distributed Names to Challenging Westphalian Sovereignty](#chapter-4-dns-in-anger---from-centralized-directories-to-distributed-names-to-challenging-westphalian-sovereignty)
-    *   [What's in a Name?](#whats-in-a-name)
-    *   [Names and Control](#names-and-control)
-    *   [Takeaways](#takeaways-3)
-*   [Chapter 5: Internet Routing: You Can't Get There From Here](#chapter-5-internet-routing-you-cant-get-there-from-here)
-    *   [Takeaways](#takeaways-4)
-*   [Chapter 6: Asleep, Tired, Or It Malingers: How Protocols Wither and Die](#chapter-6-asleep-tired-or-it-malingers-how-protocols-wither-and-die)
-    *   [NNTP and the Strange Death of Usenet](#nntp-and-the-strange-death-of-usenet)
-    *   [Gopher and The Myth of The First Mover Advantage](#gopher-and-the-myth-of-the-first-mover-advantage)
-    *   [SMTP (Email): Too Old to Die Young](#smtp-email-too-old-to-die-young)
-    *   [Takeaways](#takeaways-5)
-*   [Chapter 7: The Street Finds Its Own Use For Things: The World Wide Web From CERN to Snowden](#chapter-7-the-street-finds-its-own-use-for-things-the-world-wide-web-from-cern-to-snowden)
-    *   [A New Hope](#a-new-hope)
-    *   [Panic at the Data Center](#panic-at-the-data-center)
-    *   [Takeaways](#takeaways-6)
-*   [Chapter 8: Here Comes Everybody](#chapter-8-here-comes-everybody)
-    *   [Tor](#tor)
-    *   [BitTorrent](#bittorrent)
-    *   [Takeaways](#takeaways-7)
-*   [Chapter 9: Bitcoin…](#chapter-9-bitcoin)
-    *   [The Blocksize War](#the-blocksize-war)
-    *   [... And Everything After](#and-everything-after)
-    *   [Takeaways](#takeaways-8)
-*   [Chapter 10: The End Of The Beginning (Of The Internet)](#chapter-10-the-end-of-the-beginning-of-the-internet)
-    *   [Protocol Governance: From Within](#protocol-governance-from-within)
-    *   [Protocol Governance: From Without](#protocol-governance-from-without)
-    *   [The Root Name Server Redirection Test](#the-root-name-server-redirection-test)
-    *   [The SOPA and PIPA Blackout](#the-sopa-and-pipa-blackout)
-    *   [What Is To Be Done](#what-is-to-be-done)
-*   [Epilogue](#epilogue)
-*   [Bibliography](#bibliography)
-    *   [Prologue](#prologue-1)
-    *   [Chapter 1](#chapter-1)
-    *   [Chapter 2](#chapter-2)
-    *   [Chapter 3](#chapter-3)
-    *   [Chapter 4](#chapter-4)
-    *   [Chapter 5](#chapter-5)
-    *   [Chapter 6](#chapter-6)
-    *   [Chapter 7](#chapter-7)
-    *   [Chapter 8](#chapter-8)
-    *   [Chapter 9](#chapter-9)
-    *   [Chapter 10](#chapter-10)
-
----
----
-
-## Prologue
+# Prologue
 
 > PAXMAN: “You’ve got to think that some of the claims being made for it are hugely exaggerated, I mean, when the telephone was invented...”
 >
@@ -134,7 +82,7 @@ The word 'protocol' by itself is a bit overloaded. Even limiting ourselves stric
 
 The focus of this text is specifically on internetworking protocols — the shared language used to communicate between “totally uncorrelated sapient beings”, to use Licklider's phrasing, across the different networks that make up our present-day Internet. By way of analogy, it is a history of language and linguistics, rather than a history of the rise of the printing press or a grammar textbook.
 
-### What I hope you take from this book:
+## What I hope you take from this book
 
 Internetworking protocols — from now on in this text, simply "protocols"— are the rules that the software you depend on must implement and follow in order to connect and interact with the software that other users depend on over the Internet. Because they are a foundational component of the software applications that billions of people use to browse the Web or check their email on a daily basis, they play a silent role in shaping human behavior, literally defining the boundaries of our online world. Most users of the Internet are blissfully unaware of the role that these protocols play in their daily lives, and the engineers that are familiar with them are usually too busy dealing with the technical minutiae — the nitty-gritty details of how bits and bytes are swapped back and forth — to step back and appreciate the impact they have on the individual.
 
@@ -146,9 +94,6 @@ In ‘States And Markets’ (1988), Dr. Susan Strange frames the analysis of a s
 
 As you make your way through this text, I ask that you consider the knowledge you will find within these pages as more than just a historical review; it is a map of sorts — a guide to how we collectively came to agree on the rules that have shaped our present-day Internet and how they define the space that we as users occupy in it. I hope that it helps you to better understand how we arrived at our modern-day Internet, and how we might make our way forward.
 
----
----
-
 # Chapter 1: So... What's A Protocol, Anyway?
 
 If our aim is to write a history of networking protocols, it would be best to begin by defining exactly what a protocol is. In order to do so, we'll have to start before the first protocols were implemented or even imagined and begin by examining the motivations of the first researchers that worked to bring them to life.
@@ -157,7 +102,7 @@ In the early 1960s, before the Department of Defense's Advanced Research Project
 
 > "Two experimental computers: the TX-2 at the Lincoln Lab and the Q-32 at the System Development Corporation in Santa Monica. A line leased from Western Union provided the communications link, and Marill and Roberts wrote their own software to manage the connection. They published their results in the fall of 1966, just before Roberts left Lincoln Lab for ARPA. In describing their experiment, Marill and Roberts articulated some important concepts. In their view, the “elementary approach” to connecting two computers was for each computer to treat the other as a terminal. Such a connection required little modification of the computers, but it had severe limitations. The connection was slow, since terminals operate at much lower data rates than computers, and there was no general-purpose way to access a remote system, since each separate application program had to manage its own connections rather than having the operating system handle the connections for all applications. Marill and Roberts thought that forgoing the elementary approach and taking on the harder task of modifying the computers’ operating systems would make it possible to create a higher-speed computer-to-computer interface instead of relying on the ordinary terminal-to-computer interface. They proposed that each host computer implement a general-purpose set of rules for handling a network connection, which they called the “message protocol…”
 >
-> -- Marill and Roberts 1966, p. 428, as quoted in Abbate's *Inventing The Internet* [3]
+> -- Marill and Roberts 1966, p. 428, as quoted in Abbate's _Inventing The Internet_ [3]
 
 Lawrence Roberts's usage of the word protocol here to describe the "general purpose set of rules for handling network connections" predates even the design of the ARPANET. Roberts correctly anticipated that the task of connecting a diverse collection of far-flung computer terminals would require some sort of mutually agreed lingua franca, without which it would be impossible to realize his vision, one where:
 
@@ -171,11 +116,11 @@ As luck would have it, Davies and Roberts would meet up shortly after Roberts's 
 
 > "ARPA supports a number of computer research groups throughout the country, most of which have their own time-shared computer facilities. These researchers have agreed to accept a single network protocol so that they may all participate in an experimental network. The communication protocol is currently being developed. It will conform to ASCII conventions as a basic format and include provisions for specifying the conventions as a basic format and include provisions for specifying the origin, destination, routing, block size, and sum check of a message. There are 35 computers [...] at 16 locations; there are several computers at most locations."
 >
-> -- Lawrence Roberts, Multiple Computer Networks and Intercomputer Communications, January 1967 (https://dl.acm.org/doi/10.1145/800001.811680) [6]
+> -- Lawrence Roberts, Multiple Computer Networks and Intercomputer Communications, January 1967 ([https://dl.acm.org/doi/10.1145/800001.811680](https://dl.acm.org/doi/10.1145/800001.811680)) [6]
 
 Roberts's presentation at Gatlinburg caught the attention of several other researchers in attendance. Two former colleagues of Roberts who had moved on to the telecommunications research company Bolt, Beranek, and Newman had been keeping tabs on his work; when DARPA decided to provided funding for the actual implementation of their first network — the ARPANET — BBN submitted a successful bid for the contract starting in January of 1969, based largely on fleshing out the ideas in Roberts' paper and bringing it to life. The DARPA group tasked with working alongside BBN to implement the communications protocol described in Roberts's paper became known as the Network Working Group, or NWG.
 
-The initial challenges for the NWG were significant. Beyond the Host-to-IMP protocol (later formalized in BBN Report 1822, which defined how host computers connected to their local IMPs within the BBN-provided infrastructure), the NWG was tasked with defining how applications on different host computers could communicate *through* this IMP network. This involved defining a "Host-to-Host protocol." Early ideas were explored in documents like RFC 1 and RFC 2, with more concrete proposals for a "Host-Host Protocol" emerging in RFCs such as RFC 36 and RFC 54. This evolutionary work culminated in the specification of the Network Control Protocol (NCP). While Roberts appears to have been the first to come up with the concept and terminology of a network 'protocol', as well as the first proof-of-concept implementation of one, it was the NWG that would take on the challenge of designing and implementing the first widely adopted host-to-host communications protocols that would be expected to work in real-world conditions, moving beyond the thought experiments that had come before. In doing so, their work put them in the unenviable position of being the first to tease out the differences between protocol specifications in theory and protocol implementations in practice.
+The initial challenges for the NWG were significant. Beyond the Host-to-IMP protocol (later formalized in BBN Report 1822, which defined how host computers connected to their local IMPs within the BBN-provided infrastructure), the NWG was tasked with defining how applications on different host computers could communicate _through_ this IMP network. This involved defining a "Host-to-Host protocol." Early ideas were explored in documents like RFC 1 and RFC 2, with more concrete proposals for a "Host-Host Protocol" emerging in RFCs such as RFC 36 and RFC 54. This evolutionary work culminated in the specification of the Network Control Protocol (NCP). While Roberts appears to have been the first to come up with the concept and terminology of a network 'protocol', as well as the first proof-of-concept implementation of one, it was the NWG that would take on the challenge of designing and implementing the first widely adopted host-to-host communications protocols that would be expected to work in real-world conditions, moving beyond the thought experiments that had come before. In doing so, their work put them in the unenviable position of being the first to tease out the differences between protocol specifications in theory and protocol implementations in practice.
 
 As the meetings of the NWG began to take shape, one of founding members, Steve Crocker, realized that it would be in the collective best interests of the group to begin recording their discussions on protocol development and implementation for posterity.
 
@@ -185,13 +130,13 @@ As the meetings of the NWG began to take shape, one of founding members, Steve C
 >
 > A month later, after a particularly delightful meeting in Utah, it became clear to us that we had better start writing down our discussions. We had accumulated a few notes on the design of DEL and other matters, and we decided to put them together in a set of notes. I remember having great fear that we would offend whomever the official protocol designers were, and I spent a sleepless night composing humble words for our notes. The basic ground rules were that anyone could say anything and that nothing was official. And to emphasize the point, I labeled the notes "Request for Comments." I never dreamed these notes would be distributed through the very medium we were discussing in these notes. Talk about Sorcerer's Apprentice!
 >
-> -- RFC 1000, "The Requests For Comments Reference Guide" [7], https://datatracker.ietf.org/doc/html/rfc1000
+> -- RFC 1000, "The Requests For Comments Reference Guide" [7], [https://datatracker.ietf.org/doc/html/rfc1000](https://datatracker.ietf.org/doc/html/rfc1000)
 
 The first functional protocol that came from the NWG was the NCP — Network Control Protocol (initially conceptualized in part as the "Network Control Program" software residing on hosts, the term Network Control Protocol came to define the communication rules themselves)— which was functionally a precursor to today's modern TCP protocol. The NCP was the protocol that brought the ARPANET to life, serving as the lingua franca that Roberts had initially envisioned; as the first fruit of their efforts, it was to serve as a blueprint not only for how protocols were developed but also for what it takes to replace them.
 
 > Why 'protocol'? It seems an unlikely term to have figured in the vocabularies of engineering students, even bright ones, at the time. Vint Cerf, one of the students involved in the NWG, told Peter Salus that it had originated in a conversation between Steve Crocker and Jon Postel, who had thought of it in terms of diplomats exchanging handshakes and information. It was only later that they discovered its etymology (the word comes from the Greek, and means the first page of a document bearing the title, name of the author, scribe, and so on).
 >
-> -- Naughton's *A Brief History Of The Future* [8]
+> -- Naughton's _A Brief History Of The Future_ [8]
 
 The development process for the NCP was open to all and documented extensively, with dozens of engineers communicating over the course of two years and over twenty Requests For Comments (RFCs). The process of drafting RFCs happened organically and indeed almost accidentally. The NWG never meant to propose a new means of collaborating remotely with their peers; they needed a way to cross the organizational boundaries between private industry, academia, and government to get things done in time to meet the deadlines proposed in their contract, and a voluntary ad hoc process seemed the easiest way to accomplish that. The process of protocol design and development that they came up with turned out to be so effective that it persists to this day: new Internet standards, procedures, protocols, and processes are proposed for adoption by the broader Internet community and codified into RFC documents. When rough consensus has been reached on their suitability, they are adopted as Internet Standards by the Internet Engineering Task Force (IETF). Finally, it is left to software developers to translate the protocols as specified in RFCs into software implementations that computers can use to interoperate with each other.
 
@@ -203,15 +148,15 @@ It took several revisions and nearly a decade until the Internet Protocol — In
 
 As luck would have it — or perhaps it was the serendipity of accidental design — the opt-in nature of the RFC process for future protocol adoption would mean that flag day transitions were no longer necessary. Anyone developing software, from hobbyists to corporations, who wishes to take advantage of newly proposed TCP/IP protocol features specified in an RFC is free to do so at their own pace. Implementors only need to concern themselves with ensuring that no changes are made that would be somehow incompatible with other TCP/IP implementations. This focus on backwards compatibility means that different implementations can incorporate new protocol functionality at the pace and tempo of their own choosing while still maintaining the ability to connect and interact with each other. The principle of maintaining backwards compatibility has served the software developers tasked with writing protocol implementations well, allowing the adoption of protocol changes and updates to be driven by bottom-up demand from the Internet community as opposed to top-down hierarchical diktat.
 
-### Layering and flexibility
+## Layering and flexibility
 
 Solutions to the technical problem of connecting a disparate group of hosts into a single network were relatively straightforward to agree upon when compared to the social problem that was on the horizon. Researchers who heard of the initial ARPANET design were impressed by the vision described and eager to suggest ideas for additional features to be implemented even before the specifications had been drafted by the NWG. But how to get the network actually up and running while new features and functionality were still actively being proposed?
 
 With plenty of ideas but no concrete definitions for what services the nascent ARPANET would be providing,
 
-> ...there wasn't any clear idea of what work the hosts had to do. Only later did we articulate the notion of building a layered set of protocols with general transport services on the bottom and multiple application-specific protocols on the top. More precisely, we understood quite early that we wanted quite a bit of generality, but we didn't have a clear idea how to achieve it. We struggled between a grand design and getting something working quickly. 
+> ...there wasn't any clear idea of what work the hosts had to do. Only later did we articulate the notion of building a layered set of protocols with general transport services on the bottom and multiple application-specific protocols on the top. More precisely, we understood quite early that we wanted quite a bit of generality, but we didn't have a clear idea how to achieve it. We struggled between a grand design and getting something working quickly.
 >
-> -- Hauben and Hauben, *Netizens: On the History and Impact of Usenet and the Internet* (https://firstmonday.org/ojs/index.php/fm/article/view/612/533) [9]
+> -- Hauben and Hauben, _Netizens: On the History and Impact of Usenet and the Internet_ ([https://firstmonday.org/ojs/index.php/fm/article/view/612/533](https://firstmonday.org/ojs/index.php/fm/article/view/612/533)) [9]
 
 The model of protocols being layered on top of one another, as opposed to one omnibus protocol being forced to specify every proposed use case, was perhaps a natural conclusion to arrive at. The ARPANET design specified that one type of node in the network would serve as 'interface message processors' (IMPs), switching packets back and forth between another type of node in the network, dubbed 'hosts'; once this logical separation between types of nodes existed, a sort of modular design was made implicit, and the stacking of abstractions on top of abstractions that we have come to know as 'layering' fell into place as if it had always been intended. The roles and responsibilities of IMPs would exist on one layer, hosts another, and so on, with each layer building on top of the one underneath it. As a first example, NCP was built to set up connections between hosts on the network; the Telnet protocol and File Transfer Protocol (FTP) were layered atop NCP to enable logging in to remote machines and transferring files between them.
 
@@ -229,7 +174,7 @@ Nevertheless, a browser that supports the considerably more complex HTTP/3 can s
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Network protocols are system level software artifacts that enable the operators of heterogeneous, geographically dispersed collections of hardware and software, representing a diverse cohort of users and organizations, to connect their systems and software applications to each other, by way of a shared common language.
 2.  Requests For Comments (RFCs) are used to propose new Internet standards and communicate information between disparate groups of stakeholders. RFC compliance is opt-in by design; there are no 'protocol police' to enforce them. This means that users can voluntarily adopt modifications and changes made to protocols as long as care is taken to maintain backward compatibility for those who do not. RFCs specify how a protocol should operate — much like an architectural blueprint — and software implementations of those protocols are where the buildings of those blueprints come to life.
@@ -238,8 +183,7 @@ Nevertheless, a browser that supports the considerably more complex HTTP/3 can s
 
 ---
 
-A point of clarification: In 1969, was BBN contracted to design and deploy four Interface Message Processors (IMPs) as a sort of embryonic test of packet-switching technology. This deployment is recognized today as being the first test of what came to be known as the ARPANET. The Host-to-IMP interface protocol, later formalized in BBN Report 1822 and now referred to by as some as 'the 1822 protocol', defined how host computers connected to these IMPs. While crucial for ARPANET's operation, and a foundational layer, I find it difficult to describe this as the first *internetworking* protocol, given that it primarily governed connections within the BBN-provided infrastructure, only ran on a few hosts initially, and perhaps most importantly for the context of this book, was a) developed entirely in-house at BBN without the broad collaborative effort characteristic of later internetworking protocols, and b) wasn't publicly documented until 1976, years after NCP had been deployed and when work on TCP was already well underway. That said, I also feel it would be shortsighted to dismiss the importance of the 1822 protocol out of hand. It is analogous perhaps to the woodblocks used by Chinese monks centuries before Gutenberg's printing press — not an ancestor or a distant relative of later internetworking protocols, but a parallel species that evolved in the same environment to solve a related, underlying problem of connecting computers to the network fabric.
-
+A point of clarification: In 1969, was BBN contracted to design and deploy four Interface Message Processors (IMPs) as a sort of embryonic test of packet-switching technology. This deployment is recognized today as being the first test of what came to be known as the ARPANET. The Host-to-IMP interface protocol, later formalized in BBN Report 1822 and now referred to by as some as 'the 1822 protocol', defined how host computers connected to these IMPs. While crucial for ARPANET's operation, and a foundational layer, I find it difficult to describe this as the first _internetworking_ protocol, given that it primarily governed connections within the BBN-provided infrastructure, only ran on a few hosts initially, and perhaps most importantly for the context of this book, was a) developed entirely in-house at BBN without the broad collaborative effort characteristic of later internetworking protocols, and b) wasn't publicly documented until 1976, years after NCP had been deployed and when work on TCP was already well underway. That said, I also feel it would be shortsighted to dismiss the importance of the 1822 protocol out of hand. It is analogous perhaps to the woodblocks used by Chinese monks centuries before Gutenberg's printing press — not an ancestor or a distant relative of later internetworking protocols, but a parallel species that evolved in the same environment to solve a related, underlying problem of connecting computers to the network fabric.
 
 # Chapter 2: Standard Wars - What Are They Good For?
 
@@ -255,23 +199,23 @@ The CCITT was first out of the gate, announcing their intention to begin draftin
 
 > First, it published eleven recommendations with the new, soon-to-be-famous “X” prefix (including Recommendations X.1, X.20, and X.30 that specified basic interfaces between circuit-switched public and private data networks). Second, it formalized and extended the mission of the Joint Working Party into Study Group VII on New Networks for Data Transmission.
 >
-> -- Russell, *Open Standards* [1], pp.165
+> -- Russell, _Open Standards_ [1], pp.165
 
 IBM's System Network Architecture (hereafter SNA) came later, in September of 1974. Being a vendor in the business of actually manufacturing computer equipment, they had the advantage of being able to get a network protocol implementation up, running, and shipping with their own hardware. While the CCITT saw its role as defining standards for telecommunications, IBM’s objectives were more straightforward: to sell more IBM hardware to IBM customers. SNA's design reflects those goals:
 
 > SNA's objective was to reduce the costs of operating large numbers of terminals and thus induce customers to develop or expand interactive terminal-based systems as opposed to batch systems. An expansion of interactive terminal-based systems would increase sales of terminals and more importantly of mainframe computers and peripherals — partly because of the simple increase in the volume of work done by the systems and partly because interactive processing requires more computing power per transaction than batch processing.
 >
-> – Wikipedia, https://en.wikipedia.org/wiki/Systems_Network_Architecture [2]
+> – Wikipedia, [https://en.wikipedia.org/wiki/Systems_Network_Architecture](https://en.wikipedia.org/wiki/Systems_Network_Architecture) [2]
 
 Lastly, DEC had its own protocol suite, DECNet, which launched its Phase 1 implementation in 1974 as well. DECNet's explicitly stated design goal was to allow DEC computers running different operating systems to communicate with each other; otherwise, in practice, its objectives were no different than IBM's, though it was significantly less influential.
 
-### The OSI Model
+## The OSI Model
 
 The joint CCITT/ISO effort, by nature, moved at a much slower pace than commercial enterprises like IBM and DECNet; they didn't begin to work on specifying the Open Systems Interconnection (OSI) model of protocol development until 1977, with a first draft not being released until 1980. As the ISO shared responsibility for international telecommunications standards with the CCITT, and the CCITT had focused on nuts-and-bolts implementation details while the ISO initially focused on defining a layering model, it was natural enough for them to join efforts:
 
 > At its first meeting in February and March 1978, OSI leaders negotiated an agreement with members of CCITT Study Group 7 (the committee responsible for X.25) to share jurisdiction over proposed standards that would “have an impact on the basic design and features of Data Processing Systems.” The two groups also named official liaisons in 1978 and 1979 that would maintain a healthy flow of information and policy of consultation. Subsequent personal correspondence and official resolutions established additional points of agreement: both groups supported the urgent development of a layered architectural reference model, and both groups possessed the organizational capabilities to sustain a modular approach to the technical and social challenges of open system standardization…
 >
-> -- Russell, *Open Standards And The Digital Age* [1], pp. 205
+> -- Russell, _Open Standards And The Digital Age_ [1], pp. 205
 
 The ISO's seven-tiered layering model — more commonly, the 'OSI model'— informed the implementation of every protocol suite that came after it. The OSI model was developed by Charles Bachman at Honeywell in consultation with the INWG, Cyclades, ARPA, and others. Honeywell, of course, had their own protocol suite and their own agenda; Bachman's work on what would eventually become the OSI model was begun as an attempt to influence international standards in a way that would be complementary to Honeywell's HDNA protocol suite or, failing that, to prevent IBM from becoming the sole authority dictating international protocol standards.
 
@@ -289,27 +233,27 @@ It is a mistake, however, to presume that global adoption of their protocol was 
 
 > Just what does it take to win a standards war? Your ability to successfully wage a standards war depends on your ownership of seven key assets: (1) control over an installed base of users, (2) intellectual property rights, (3) ability to innovate, (4) first-mover advantages, (5) manufacturing abilities, (6) strength in complements, and (7) brand name and reputation. What these assets have in common is that they place you in a potentially unique position to contribute to the adoption of a new technology. If you own these assets, your value-added to other players is high.
 >
-> --Shapiro, *Information Rules* [3]
+> --Shapiro, _Information Rules_ [3]
 
 > The standards negotiation problem is akin to the classic battle of the sexes game: each player prefers a standard to no standard, but each prefers its own standard to the other’s. As in any bargaining problem, the outcome depends critically on the threat point — the payoff the parties receive if the negotiations break down. The better off a bargainer is if the negotiations fail, the more concessions he will be able to extract from his counterpart. Thus it is common to see companies continuing to develop proprietary solutions, even while engaged in standards negotiation.
 >
-> -- Varian, *Economics Of Information Technology* [4]
+> -- Varian, _Economics Of Information Technology_ [4]
 
 Absent a monopoly, the vendor-driven approach was never going to lead to widespread adoption. Standards wars rarely lead to outright victory; they are defensive wars of attrition by nature. IBM, for example, didn't need SNA to be adopted by the wider Internet community or by DEC (though either of those outcomes would have been welcome); their ultimate goal was to ensure that DEC wouldn't steal their customers away with promises of new networking functionality by having their own networking protocols to offer instead. The development of SNA was as much about marketing computers as it was about connecting them.
 
 The OSI model and the X standards that implemented them were considerably more successful in terms of both gaining mindshare amongst researchers and developers and in seeing usage in the real world. Since the ISO and CCITT (now renamed the ITU) were granted a mandate by the UN for coordinating communications standards internationally, any national telephone system operator that wished to experiment with networking used the X standards as their guide (and to the X.25 protocol in particular, as it specified the lower-level data layer). The telecom companies were accustomed to relying on the ITU's standards for interconnecting with other national telephone systems; relying on them for internetworking seemed only logical. This top-down imposition of protocol standards set the stage for the conflict between the OSI and Internet camps.
 
-### OSI's top-down hierarchy vs. TCP/IP's bottom-up adoption
+## OSI's top-down hierarchy vs. TCP/IP's bottom-up adoption
 
 > One notable decision of the X.25 design group was to favor virtual circuits over datagrams. The decision was a pragmatic one that followed logically from the power dynamics of CCITT. As Rybczynski later noted, telephone carriers unanimously supported virtual circuits because they “better fitted their service models, existing applications and user expectations.” X.25 also fit well with the networking approach of a dominant user, IBM. IBM’s System Network Architecture, according to IBM France engineer Marc Levilion, transmitted data between computers first by considering a “map of the routes available,” and then by sending “each new communication between applications” along “one particular physical route across a network.” This emphasis on fixed routes was, Levilion recalled, “very close to the philosophy of X.25.” Such a consonance of interest was important for Déspres, who knew that the French telecom monopoly’s users were “companies using IBM computers... IBM had at that time more than half the market.” Virtual circuits, from the vantage point of the PTTs and dominant computer firms, would provide an incremental and predictable transition into the world of digital data communications – a satisfactory solution for the leading providers and users of standards at the time. Datagrams, however, promised disruption. Datagram designs seemed likely to usher in a new era of unpredictable and radical technological change in networking.
 >
-> -- Russell, *Open Standards* [1], pp. 169
+> -- Russell, _Open Standards_ [1], pp. 169
 
 What was initially a stylistic disagreement between proponents of virtual circuits (like OSI and IBM) and researchers interested in datagrams and packet switching – one approach promoting incrementalism, the other promising disruption – quickly became an intractable conflict. This protocol cold war ebbed and flowed throughout the 1980s and was fought on multiple battlefronts; what started as perhaps a matter of taste became over the course of several years an intractable war of attrition cast in near-religious terms by those waging it, a battle between the 'netheads' supporting TCP/IP and the 'bellheads' that saw internetworking as an incremental improvement of the telephone system.
 
 The TCP/IP camp advocacy for packet-switching allowed them to take a blue-sky approach to network protocol research and development; the OSI camp preferred circuit-switching, if only because their target audience of telephone carriers and computer vendors was more readily able to integrate circuit-switched protocols into their existing infrastructure. Ultimately, the implicit (and sometimes explicit) end goal of the OSI/CCITT camp was to have national networks operated by public telephone carriers, while the ARPA camp's idea of internetworking necessarily implied a group of heterogeneous networks all connecting across national boundaries to each other using a single protocol (with each network presumably free to 'speak' whatever protocol they preferred to use internally). This vision of how disparate networks would be interconnected necessarily meant that the protocol suite would have to be adopted from the bottom up; the ARPA team had neither the resources nor the inclination to push for their protocol suite's adoption on every network that could theoretically interconnect, and focused instead on making their software available to anyone who might wish to do so, leaving the details of implementation up to the host networks.
 
-A curious dichotomy is revealed in the historic record of the ISO's efforts at drafting standards; while they were receptive to outside input and in fact encouraged collaboration amongst researchers from competing efforts, there was an expectation that OSI standards, once finalized, were not to be questioned, much less debated or compared to alternatives. Looking back on the effort, one of the engineers working on the TCP/IP standards, David Mills, put it succinctly: “Internet [TCP/IP] standards tended to be those written for implementers. International [OSI] standards were written as documents to be obeyed.” (Russell, *Open Standards* [1], pp. 227).
+A curious dichotomy is revealed in the historic record of the ISO's efforts at drafting standards; while they were receptive to outside input and in fact encouraged collaboration amongst researchers from competing efforts, there was an expectation that OSI standards, once finalized, were not to be questioned, much less debated or compared to alternatives. Looking back on the effort, one of the engineers working on the TCP/IP standards, David Mills, put it succinctly: “Internet [TCP/IP] standards tended to be those written for implementers. International [OSI] standards were written as documents to be obeyed.” (Russell, _Open Standards_ [1], pp. 227).
 
 The conflict between the two camps ebbed and flowed in intensity for decades; sometimes researchers would work together, sometimes at cross purposes, in fits and starts, as the idea of computing networking took hold, and with it, the need for some sort of standard for users to rely on for guidance. The OSI camp had an endless procession of meetings and committees, leading to more meetings and more committees — inevitably leading to more opportunities for different stakeholders to try to inject their own agenda into the standardization process. IBM, perhaps unsurprisingly, was the most active of these, in the hopes of delaying and stonewalling the OSI efforts in an apparent attempt to buy time for their SNA protocol suite to reach critical mass. Being a multinational corporation with tremendous financial resources and employee headcount, they were able to insert themselves into the OSI process at the level of local committees, obstructing the OSI's standardization process with ‘constructive criticism’ at every turn. Although they weren't the primary reason for the OSI effort's loss of momentum and market share to the ARPA camp, they were a perfect example of the near-impossibility of reaching consensus between different stakeholders for agreements on a common standard, as their efforts led to repeated delays and stalled momentum.
 
@@ -319,38 +263,35 @@ Years later, David Clark, one of the original ARPA team members, wrote about the
 
 > Perhaps the most important consequence of the Internet’s success is that the common purpose that launched and nurtured it no longer prevails. There are, and have been for some time, important and powerful players that make up the Internet milieu with interests directly at odds with each other. The Internet is not a single happy family of people dedicated to universal packet carriage. There is contention among the players... The Internet, like society in the large, is shaped by controlled tussle, regulated not just by technical mechanisms but by mechanisms such as laws, judges, societal opinion, shared values, and the like. There is no “final outcome” of these interactions, no stable point, and no acquiescence to a static architectural model. Today, the Internet is more and more defined by these tussles.
 >
-> -- Clark, *Tussle in Cyberspace: Defining Tomorrow’s Internet* [5]
+> -- Clark, _Tussle in Cyberspace: Defining Tomorrow’s Internet_ [5]
 
 Once OSI's design standards were deemed ready, local working groups across the world were formed in an attempt to implement the protocols. Instead of following a straightforward path of implementing the standards dedicated to them, each group found ambiguity and fault, room for interpretation, and pushback where they had been seeking clarity and guidance. At the same time, a 'kitchen sink' mentality took hold; the idea was that the OSI suite needed to be implemented in its entirety, all at once:
 
 > The dichotomy in OSI immensely complicated its output. Because vendors were unwilling to bet on the outcome, they felt they had to implement the whole thing. As with all organizations, it is the internal problems that are the most deadly. There were just too many disparate camps under one umbrella, too many wanting to “lead” OSI, and no common direction for OSI to have ever succeeded. And while there were elements buried in OSI that would have advanced the state of the Internet, it would have been impossible to extract them in the political climate, and there were still many things that were not “right.” The lesson to take away from the OSI experience is plain: No matter how reasonable it may appear, collaborating with the legacy will lead to failure. If the new model does not have enough advantage to stand on its own, it does not have enough to stand with the old guard either.
 >
-> -- Day, *Patterns In Network Architecture* [6]
+> -- Day, _Patterns In Network Architecture_ [6]
 
 In the meantime, DARPA's focus on getting a working implementation up and running meant that the TCP/IP suite had been built into operating systems, for free, since its inception. Having a working protocol suite available and in the hands of end-users while OSI was still haggling out implementation details gave the Internet protocol a clear edge; implementors had to choose between a protocol suite that had spent years in committee, built to satisfy all stakeholders and yet delight none of them, or one that was already available to them, waiting to be turned on:
 
 > [The OSI] was cumbersome, expensive, and not very efficient,” Levilion recalled. “And at the same time came the Internet. Free! So on one side you have something that’s free, available, you just have to load it. And on the other side, you have something which is much more architectured, much more complete, much more elaborate, but it is expensive. If you are any director of computation in a company, what do you choose?"
 >
-> -- Russell, *Open Standards And The Digital Age* [1], pp. 208
+> -- Russell, _Open Standards And The Digital Age_ [1], pp. 208
 
 By 1994, the rivalry between TCP/IP and OSI fizzled out in near silence, due in equal parts to TCP/IP’s market dominance – the presence of full working TCP/IP implementations in all major operating systems – and the decision of various governments to abandon their “OSI-only” policies forced the OSI camp to focus on inter-operating with TCP/IP instead of supplanting it.
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Standards wars waged by vendors are a hindrance to widespread protocol adoption; they can be seen as a negotiating tactic or an opening gambit by vendors or stakeholders hoping to preserve their own sovereignty, or at the very least not to cede it to their competitors. A standards war at the protocol level is by definition a war of attrition, not annihilation.
 2.  Top-down protocol imposition is vulnerable to subversion, as the tension between protocol designers and implementors tends to lead to unresolvable conflicts. The greater the number of stakeholders involved in the design and implementation of a protocol, the higher the likelihood of disagreements and conflict subverting the implementation.
 3.  Getting a protocol implementation up, running, and into the hands of users as fast as possible is more important for reaching critical mass than hashing out implementation details. It's better to ship a "good enough" implementation than to waste time drafting the perfect standard. Implementors and users alike will take any perfect standard that designers might come up with and find it lacking in some way, in need of debate and bike-shedding; better to prioritize getting user feedback on actual running code first (presuming the protocol is flexible enough to incorporate proposed changes later!).
 
----
----
-
 # Chapter 3: If You Can't Beat Them, Co-Opt Them: CLNP vs IPv6 As The Future Of TCP/IP
 
 The stagnation of the OSI protocol suite may have been perceived as a de facto victory for the proponents of open systems and bottom-up protocol adoption, but it certainly didn't guarantee the supremacy of TCP/IP, nor did it lead directly to either OSI's proponents or telecom operators conceding defeat. Instead, their working shifted from protocols that would compete with TCP/IP to work on protocols that hoped to replace TCP/IP as a successor. In this chapter, we'll investigate two examples of these attempted replacements in the 1990s: the fight over whether CLNP (the last gasp of the OSI protocol suite) or IPng (what we now refer to as IPv6) would replace the existing version of the Internet Protocol, IPv4, in the TCP/IP suite.
 
-(For historical reasons, the first working version of the Internet Protocol is referred to as IP version 4, or IPv4. For more information on the numbering scheme, from IPv0 to IPv10, refer to RFC 1700 or ARIN’s informative blog post at https://www.arin.net/blog/2022/05/12/other-ip-version-numbers/).
+(For historical reasons, the first working version of the Internet Protocol is referred to as IP version 4, or IPv4. For more information on the numbering scheme, from IPv0 to IPv10, refer to RFC 1700 or ARIN’s informative blog post at [https://www.arin.net/blog/2022/05/12/other-ip-version-numbers/](https://www.arin.net/blog/2022/05/12/other-ip-version-numbers/)).
 
 Once the TCP/IP suite outgrew the confines of the Network Working Group and International Network Working Group and saw widespread adoption in the academic and research communities, new institutions had to be set up to handle the task of coordinating between different Internet protocol stakeholders. Most important among these were the IAB (Internet Architecture Board), originally formed in 1979, a committee of the IETF (Internet Engineering Task Force). The IAB was a sort of council of thirteen Internet elders, twelve of whom were appointed by the IETF. The IETF itself was open to anyone who wished to contribute; in practice, this meant hundreds of engineers, ranging from employed software developers to hobbyists and enthusiasts. Among the primary duties specified in the IAB's charter are providing architectural oversight, guidance over the standards process, and stewardship over RFC publication.
 
@@ -372,7 +313,7 @@ Nevertheless, at the time, the problems presented by address exhaustion and inef
 
 > Since the exhaustion of the address space and the explosion of the routing tables threatened to throttle the Internet’s growth, the council of elders assembled in the IAB began to consider their options with a certain sense of urgency. Lyman Chapin, who served as IAB chairman from July 1991 to July 1993, stated simply in an interview that the shortage of Internet addresses was “definitely the most significant engineering problem on the Internet now.” The IAB responded by convening three workshops in January and June 1991 and January 1992 where more than thirty leaders of the Internet community held extensive discussions that were “spirited, provocative, and at times controversial, with a lot of soul-searching.” The Internet elite eventually reached a consensus around four “basic assumptions regarding the networking world of the next 5–10 years”: the TCP/IP Internet and OSI would continue to coexist, the Internet needed to support multiple protocols and include diverse networking technologies, traffic would be carried both by public and private networks, and the Internet architecture needed to be able to scale far beyond its current capacity.
 >
-> -- Russell, *Open Standards And The Digital Age* [1], pp. 230
+> -- Russell, _Open Standards And The Digital Age_ [1], pp. 230
 
 In July of 1991 a warning shot was fired in the form of RFC 1273; its abstract makes clear the desire to extend the Internet protocol suite to include support for OSI protocols:
 
@@ -386,14 +327,14 @@ Chapin's words, with seemingly the full weight of the IAB behind them, set off a
 
 "We reject: kings, presidents, and voting. We believe in rough consensus and running code." [4]
 
-### Switching Costs and Lock-In
+## Switching Costs and Lock-In
 
 While IPv6 was free of the 'taint' of OSI and the diktat of the IAB, it had a crucial flaw: it was "wire incompatible" with IPv4. That meant that by default there was no way for software or hardware running IPv4 to understand, relay, or interact with IPv6; any piece of hardware or software tasked with forwarding or accepting IPv6 packets would have to be upgraded to be able to do so. There was no way for an existing TCP/IP host or network — that is, anyone connected to the existing Internet — to fully support IPv6 without overhauling every last bit of their existing network to support both the IPv4 and IPv6 protocol stacks. Kuerbis and Mueller, in their paper on the subject, noted the difficulties with this approach to migration:
 
 > The proposed dual-stack migration model envisioned by IPv6 designers had two fatal problems:
 >
-> 1) It doesn’t reduce the demand for IPv4 addresses.
-> 2) IPv6 deployers take on additional costs while those who remain on IPv4 do not.
+> 1. It doesn’t reduce the demand for IPv4 addresses.
+> 2. IPv6 deployers take on additional costs while those who remain on IPv4 do not.
 >
 > – Kuerbis and Mueller, 'The Hidden Standards War: Economic Factors Affecting IPv6 deployment' [5]
 
@@ -415,14 +356,11 @@ In hindsight, the imagined crisis was one of only two possible outcomes that cou
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Since the 1992 IETF meeting rejecting the imposition of CLNP as a successor protocol to IPv4, 'Rough consensus and running code' has been the mantra of protocol designers, for better or worse. There are no protocol police to enforce the rules, and no kings to dictate them.
 2.  The higher the switching costs associated with new technologies, the longer users will take to transition to them. Making IPv6 wire-incompatible with IPv4 all but guaranteed that the transition to IPv6 wouldn't begin until IPv4 address exhaustion set in and IPv4 networks could no longer grow. Even then, converter technologies for IPv6 needed to be readily available to allow new IPv6 networks to connect to the existing IPv4 Internet.
 3.  Base layer lock-in for networks is a strong inertial force; the longer that a functional network is providing utility to a majority of its users, the lower the incentive to make any changes that might benefit new users yet to be onboarded. In order to overcome this lock-in, either the provided utility must somehow begin to degrade for the existing set of users, or the perceived benefit to new users must be high enough to make the changes worth the effort to implement.
-
----
----
 
 # Chapter 4: DNS In Anger - From Centralized Directories to Distributed Names to Challenging Westphalian Sovereignty
 
@@ -432,7 +370,7 @@ Try keeping a list of those addresses straight in your head, and you'll soon see
 
 Addresses were never meant to solve these problems, and so these problems were never contemplated when the IPv4 addressing scheme was first drafted. An IP address is a location, similar to a physical location in many ways; it's not meant to be a unique identifier any more than a mailing address is. For those, we need names.
 
-### What's in a Name?
+## What's in a Name?
 
 "A name indicates what we seek. An address indicates where it is. A route indicates how we get there." This quote, often attributed to Jon Postel, originated with John Shoch's 1978 paper "A Note on Inter-Network Naming, Addressing, and Routing" [1]. Network names had been discussed prior to this, but Shoch's paper managed to capture in one succinct phrase exactly what problem naming was meant to solve — the identification of resources — and why it was important to separate that problem from the problem that addressing was meant to solve – identifying the location of those same resources.
 
@@ -450,12 +388,12 @@ In the early days of the Internet, the way to handle the problem of binding reso
 >
 > No two hosts in HOSTS.TXT could have the same name. However, while the NIC could assign addresses in a way that guaranteed uniqueness, it had no authority over hostnames.
 >
-> -- Larson, *DNS On Windows 2000* [3]
+> -- Larson, _DNS On Windows 2000_ [3]
 
 > The problems were that the file, and hence the costs of its distribution, were becoming too large, and that the centralized control of updating did not fit the trend toward more distributed management of the Internet. Simple growth was one cause of these problems; another was the evolution of the community using HOSTS.TXT from the NCP-based original ARPANET to the IP/TCP-based Internet. The research ARPANET’s role had changed from being a single network connecting large timesharing systems to being one of the several long-haul backbone networks linking local networks which were in turn populated with workstations. The number of hosts changed from the number of timesharing systems (roughly organizations) to the number of workstations (roughly users). This increase was directly reflected in the size of HOSTS.TXT, the rate of change in HOSTS.TXT, and the number of transfers of the file, leading to a much larger than linear increase in total resource use for distributing the file. Since organizations were being forced into management of local network addresses, gateways, etc., by the technology anyway, it was quite logical to want to partition the database and allow local control of local name and address spaces.
 > A distributed naming system seemed in order.
 >
-> -- Mockapetris, *Development Of The Domain Name System* [4]
+> -- Mockapetris, _Development Of The Domain Name System_ [4]
 
 This distributed naming system was designed by computer scientist Paul Mockapetris at the behest of Jon Postel, at the time a researcher at the SRI, and was specified initially in RFC 882 and 883 as the Domain Name System (DNS). It proposed an elegant solution to the problems with the existing HOSTS.TXT approach: a distributed, hierarchical database of names, with control of updates and changes delegated at every opportunity. Name servers would be granted the authority to respond to requests for information about different names from the top down; e.g., a given set of servers would be in charge of delegating requests for any domains ending in ".com"; those servers in turn would direct requests for specific names like "example.com" to a different set of servers that the administrator of the "example.com" domain had granted authority to broadcast any information related to that name; other servers called resolvers would wait for requests from users for names like "example.com"; upon receiving a request the resolvers would try to 'resolve' the request by querying the root servers to discover the names of the servers in charge of the ".com" label; after receiving a response, the resolvers would then query the servers they had discovered were in charge of the ".com" label for directions to the servers in charge of "example.com", then ask the servers in charge of "example.com" for the addresses and related information associated with "example.com", and finally these servers would cache the results for a period of time, so that any end users who wanted to know details about "example.com" would be able to receive a response directly, without having to repeat the whole question-and-answer resolution process for every single request made.
 
@@ -469,7 +407,7 @@ The behavior of the speculators taking part in this land rush bring to mind the 
 
 > ...the greatest example of all may be the monetary role of gold, which can perhaps be explained only as the "solution" of a coordination game. (A common household version of the coordination game occurs when two people are cut off in a telephone conversation; if they both call back, they only get busy signals.)
 >
-> -- Schelling, *The Strategy of Conflict Prospectus for a Reorientation of Game Theory* [5]
+> -- Schelling, _The Strategy of Conflict Prospectus for a Reorientation of Game Theory_ [5]
 
 This land rush dynamic repeated itself again to a much smaller degree with the rise of country domains as vanity identifiers (kicked off by bit.ly's use of Libya's country domain for their URL shortening service, and seen in country level domains like Anguilla Island's “.ai” being used by artificial intelligence companies, or television companies using the Tuvalu “.tv” country domain); and then again with the opening of alternative global top level domains (gTLDs), like .xxx and .cash. Each successive land rush pulled in a smaller number of participants and a smaller aggregate reward, as market participants rushed in to buy and sell assets until the supply of greater fools to sell to was exhausted.
 
@@ -483,7 +421,7 @@ These questions found their answers by piecemeal in repeated attempts over the y
 >
 > Part of the new world order is that the space defined by the actions of applications is well beyond the traditional domain of communications regulation and even beyond the domain of regulation trade and commerce. Applications use communications [protocols] as a service, but they do not define it. This is a new space, and the sovereign rights of nations are finding it extremely challenging to assert that they have primacy when they cannot defend their borders and cannot unilaterally enforce their will. Is the new definition of information technology nationhood equating to the ability to impose the national will on end-users irrespective of physical land and sea borders?
 >
-> -- Vixie, 'The DNS Wars', Presentation to NANOG 2019-10, https://pc.nanog.org/static/published/meetings/NANOG77/2033/20191028_Vixie_Keynote_Dns_Wars__v1.pdf [6]
+> -- Vixie, 'The DNS Wars', Presentation to NANOG 2019-10, [https://pc.nanog.org/static/published/meetings/NANOG77/2033/20191028_Vixie_Keynote_Dns_Wars\_\_v1.pdf](https://pc.nanog.org/static/published/meetings/NANOG77/2033/20191028_Vixie_Keynote_Dns_Wars__v1.pdf) [6]
 
 As a concrete example of how the DNS can challenge “the sovereign rights of nations”, consider the following scenario: suppose that a DNS stakeholder — perhaps a registry operator like Network Solutions, a large DNS resolver operator such as Google, or a CDN operator such as Cloudflare — were to unilaterally decide to redirect certain requests for Ukrainian government domains (that is, anything in the top-level domain ending in .ua, such as www.gov.ua) to DNS servers under the control of the Russian Ministry of Information. What actions could the Ukrainian government take to defend and assert their sovereignty? The Peace of Westphalia established in 1648 assumed that sovereigns would assert control over land, sea, and air and defend them accordingly; the idea that the information space could be contested in such a way would have been simply incoherent at the time.
 
@@ -493,11 +431,11 @@ In each of these eras, we can see echoes of "the tussle" first mentioned in Chap
 
 > When the Mozilla Foundation announced its intention to ship the next version of its Firefox browser with a default setting that both enabled DoH and directed DoH to Cloudflare’s Open Recursive Resolver service, the United Kingdom called for a “summit meeting” with Mozilla. This was not the enacting of legislation, the adoption of a regulation or any other measure that is conventionally available to a nation-state, but a meeting of a different nature. Is this the resurgence of quasi nation-states such as the Honourable East India Company, a joint-stock company that ran its own army (twice the size of the British Army at its peak in 1803), fought its wars and established and defended its borders in a manner that was fully consistent with the actions of any other nation-state?
 >
-> -- Vixie, *The DNS Wars* [6]
+> -- Vixie, _The DNS Wars_ [6]
 
 Reading this paragraph, it is difficult to imagine the rise of a new East India Company as being either the intended or unexpected outcome of Mockapetris's project to build a distributed naming system back in 1983. The original assignment was to remove the central point of failure that the HOSTS.TXT file represented. Mockapetris succeeded in doing exactly that. With the removal of a central authority that could be coerced or targeted, a power vacuum emerged, one that stakeholders have tussled over ever since.
 
-### Names and Control
+## Names and Control
 
 The assignment and revocation of names for resources has become a cornerstone of Internet authority. From information services like AOL and Prodigy using keywords to access content, to IRC networks designating channel names, to social media platforms assigning unique usernames, the ability to bind a name to a resource, or to restrict or revoke it, is a fundamental locus of control. It is a right that users rely on as well as a privilege that central authorities require to maintain legitimacy.
 
@@ -507,7 +445,7 @@ For a real-world example, I might tomorrow decide to change the address associat
 >
 > It is the author's hypothesis that all such agreements of control, including control over the semantics of symbols, to be made and respected across trust boundaries are problems of agreeing on and maintaining property rights... Highlighting the property rights nature of public directories also highlights the limitations of these mappings — for example that names, addresses, and other symbols whose semantics are controlled by a person can often be delegated, just as property can be given or rented.
 >
-> -- Szabo, *Secure Property Titles With Owner Authority*, https://nakamotoinstitute.org/secure-property-titles/ [7]
+> -- Szabo, _Secure Property Titles With Owner Authority_, [https://nakamotoinstitute.org/library/secure-property-titles/](https://nakamotoinstitute.org/library/secure-property-titles/) [7]
 
 Although the Domain Name System is a self-contained namespace that exists outside of any single state's control, domain holders themselves — that is, domain registrants that are neither in the business of operating registrars that assign names nor running resolvers that answer questions about the bindings of names — have few tools to exercise their rights over their property. Domains can be seized and redirected by government decree, if the underlying technical infrastructure — that is, the nameservers and their registries — are located in physical territory that the governments can assert control over — but as names in a global namespace are available in multiple overlapping jurisdictions, the ability of states to exert control over them can be subverted. Consider the example of The Pirate Bay, a website sharing BitTorrent magnet files that allowed users to download copyright-protected mass media:
 
@@ -521,7 +459,7 @@ Although the Domain Name System is a self-contained namespace that exists outsid
 >
 > Not fans of subtlety, the Pirate Bay currently sports the logo of a hydra — you know, the whole “cut off one head and several more spring up” thing — surrounded by the suffixes .mn, .gd, .la, .am, .gs, a reference to five other domain names the site has at the ready.
 >
-> -- Collier, *The Pirate Bay lives on despite Swedish Domain Seizure*, [8] The Daily Dot https://www.dailydot.com/debug/the-pirate-bay-domain-sweden-seized/
+> -- Collier, _The Pirate Bay lives on despite Swedish Domain Seizure_, [8] The Daily Dot [https://www.dailydot.com/debug/the-pirate-bay-domain-sweden-seized/](https://www.dailydot.com/debug/the-pirate-bay-domain-sweden-seized/)
 
 The case of The Pirate Bay shows how it is possible to circumvent state control of the DNS by using registrars, resolvers, and businesses in different jurisdictions; an edict by one state to restrict a name can only be enforced upon the rights holders occupying physical space under their control. In practice, several of the top-level domains (TLDs), including the most popular TLD, .com, fall almost exclusively under the physical jurisdiction of a single state, and evading its control requires significant effort.
 
@@ -531,7 +469,7 @@ Several alternative sets of root servers exist, managed either by states that wi
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  The Domain Name System was built to replace a centralized name mapping system and primarily focused on making the name mapping system more distributed and maintainable, removing a single point of control over names.
 2.  The 'dotcom' gold rush of the late 1990s cemented the shared understanding of the value of domain names amongst Internet users. This value was derived from the de facto property rights granted to domain holders, who are able to buy, sell, and modify the contents of domain names. There were future gold rushes built around similar domain name dynamics, with each wave of speculation leading to diminishing returns.
@@ -552,12 +490,13 @@ Connections to hosts in remote networks were facilitated by the DARPA Internet G
 > Early versions of gateway software were implemented using the BCPL language and the ELF operating system. This implementation evolved into one which used the MOS operating system for increased performance. In late 1981, we began an effort to produce a totally new gateway implementation. The primary motivation for this was the need for a system oriented towards the requirements of an operational communications facility, rather than the research testbed environment which was associated with the BCPL implementation....
 >
 > The gateway must make a routing decision for all datagrams that are to be to forwarded. The routing algorithm provides two pieces of information for the gateway:
-> 1) the network interface that should be used to send this datagram and
-> 2) the destination address that should be put in the local network header of the datagram.
+>
+> 1. the network interface that should be used to send this datagram and
+> 2. the destination address that should be put in the local network header of the datagram.
 >
 > The gateway maintains a dynamic Routing Table which contains an entry for each reachable network.
 >
-> -- RFC 823, https://www.rfc-editor.org/rfc/rfc823#section-4.4.6 [1]
+> -- RFC 823, [https://www.rfc-editor.org/rfc/rfc823#section-4.4.6](https://www.rfc-editor.org/rfc/rfc823#section-4.4.6) [1]
 
 GGP, described in RFC 823, was a strange choice for an internetwork routing protocol, as it was designed for routing internally between gateways instead of between remote systems. However, the ARPANET in practice was de facto a single "autonomous system", the name given to remote networks with their own unique topologies. In the first epoch, the ARPANET backbone was administered by Bolt, Beranek, and Newman (BBN), with the GGP protocol being used to exchange routes between gateways internal to ARPANET, and the Exterior Gateway Protocol (EGP) being used to exchange routes with other external networks connecting to the ARPANET. EGP was described first in RFC 827 before being formally specified in RFC 904.
 
@@ -565,7 +504,7 @@ This combination of GGP and EGP worked well enough during the first epoch; the s
 
 > A limitation of EGP is that it only allows for a tree-like network topology. That means that there can only a single path between any two parts of the network. But that’s not a big deal back in the 1980s, as in 1986, the National Science Foundation created the (56 kbps!) NSFNet which is the “backbone” of the internet. As such, all long distance traffic passed through the NSFNet, which was upgraded to 1.5 Mbps in 1988 and 45 Mbps in 1991. EGP introduced the notion of “autonomous systems”, with each separate network engaging in EGP routing having its own autonomous system (AS) number.
 >
-> -- Van Bejnum, “GGP, EGP and 25 years of BGP: a brief history of internet routing”, retrieved from https://www.routerfreak.com/ggp-egp-and-25-years-of-bgp-a-brief-history-of-internet-routing/
+> -- Van Bejnum, “GGP, EGP and 25 years of BGP: a brief history of internet routing”, retrieved from [https://www.routerfreak.com/ggp-egp-and-25-years-of-bgp-a-brief-history-of-internet-routing/](https://www.routerfreak.com/ggp-egp-and-25-years-of-bgp-a-brief-history-of-internet-routing/)
 
 If the MILNET/ARPANET split revealed the flaws in the GGP and EGP routing protocols, the NSFNet backbone gave those protocols a new lease on life with a bit of a clever hack: the NSFNet's gateways, all six of them, ran a third routing protocol, HELLO, specified in RFC 891, that connected the old ARPANET and the new NSFNet backbone. HELLO managed to bridge the gap between GGP and EGP, at least for the six gateways that it ran on. (I mention HELLO here only for the sake of completeness. A protocol that only runs on six hosts, all managed by the same administrators, doesn't seem likely to offer us enough insights to be worth analyzing…)
 
@@ -575,13 +514,13 @@ In June of 1988, the non-profit corporation Merit bid on a contract to upgrade t
 
 > During the privatization, Kahin commented that the NSF’s redesign fundamentally reshaped the infrastructure of the Internet. Instead of one major backbone — the NSFNet — the new network depended on multiple backbone providers. The NSF created the NAPs to interconnect these networks and to prevent a balkanized Internet. While this design was inspired by the CIX and the FIX interconnection points, it went substantially beyond them. This new network was designed to create competition for backbone services.
 >
-> -- Kesan and Shah, “Fool Us Once Shame On You, Fool Us Twice Shame On Us” [4]. Retrieved from https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1399&context=law_lawreview
+> -- Kesan and Shah, “Fool Us Once Shame On You, Fool Us Twice Shame On Us” [4]. Retrieved from [https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1399&context=law_lawreview](https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1399&context=law_lawreview)
 
 The transition from a monolithic backbone to a series of network access points (now known as Internet Exchange Points, or IXPs) redefined what it meant for a network to be ‘connected to the Internet’. In the ARPANET and NSFNet epochs to be connected to the Internet meant sharing access to the same backbone provider as the other organizations – primarily universities and research labs – that had signed up for access. In the IXP era, it meant have the ability to (at least) receive information on how to connect to other networks, and ideally to advertise information on how other networks could reach yours. This transition away from a monolithic backbone structure opened the door to the final epoch of Internet routing protocols and the successor to EGP, BGP.
 
 > BGP is perhaps the first example in the Internet (or at least the first substantially worked-out example) of a protocol designed to shape industry structure. The predecessor of BGP was designed in the era when the ARPANET was the backbone of the Internet. Exterior gateway protocol, or EGP, assumed a hierarchical pattern of interconnection among the regions (the ASs), with ARPANET and then NSFNet at the top of the hierarchy. If EGP had become the routing protocol for the commercial Internet, a single commercial provider would have taken the place of NSFNet, in a position that seems close to an architecturally created monopoly.
 >
-> -- Clark, *Designing an Internet* [5]
+> -- Clark, _Designing an Internet_ [5]
 
 The first version of BGP, BGP version 1, was defined in RFC 1105. It's been known ever since as the 'three napkin protocol', because that's what the initial specification was written on, by a team of Cisco and IBM engineers in January 1989 at the 12th IETF meeting in Austin, Texas. This version of BGP, like EGP before it, only supported hierarchical network topologies (e.g., up, down, and horizontal connections). It was BGP version 2, defined in RFC 1163 in 1990, that added support for carrying multiple routes to the same destination, as well as a new UPDATE message type. BGP version 3, defined in RFC 1267 in 1991, added support for carrying IP multicast routing information and introduced a new message type called the "NOTIFICATION" message, which is used to report errors and other important information between BGP speakers. BGP version 4, defined in RFC 1771 in 1995, is the current version of the protocol and the standard for routing on the Internet. This version added support for carrying Classless Inter-Domain Routing (CIDR) routes, which is useful because it meant that more of the IPv4 address space could be chopped up than the original "Classful" network allocations. A discussion of classful vs. classless addressing is out of scope here, but it's important to note that in supporting CIDR, BGP-4's design helped to conserve the limited number of IPv4 addresses available and improved routing efficiency on the Internet.
 
@@ -591,17 +530,17 @@ Despite BGP-4's longevity, it is not without its flaws. In particular, the proto
 
 There are at least two proposals to fix this core problem with BGP-4: Secure BGP (sBGP) and Secure Origin BGP (soBGP). Both of them take different approaches to solving the same problem; neither was able to gain enough momentum to overtake BGP-4. Why?
 
-We again return to the switching costs we first learned about in Chapter 3 — the costs paid by implementors when changing between different technological standards. In the case of BGP, these costs are steep: new firmware would have to be rolled out to routers supporting a new protocol, requiring maintenance and downtime. Operators would have to be trained in best practices for implementing that protocol, and finally connections would have to be updated one by one, peer by peer, organization by organization. This is almost infeasible in practice. The transition to the Network Access Point/Internet Exchange Point (NAP/IXP) paradigm kicked off a rush of peers eager to establish connections with each other (the theory being that better connected peers were more valuable). Due to the NAP model of interconnection, the number of connections between BGP speakers is exponentially greater than the number of connections between EGP speakers in the old NSFNet backbone – meaning that the number of organizations that would have to coordinate to upgrade to an entirely new protocol is also exponentially greater. An added wrinkle: the two competing proposals, soBGP and sBGP, came with two distinctly different sets of tradeoffs, which naturally meant two different camps of researchers and vendors were advocating past each other for their preferred protocol, instead of collaborating on a way to move forward to fix BGP-4’s problems. This led to an inevitable stalemate, as network operators waited for a clear victor to emerge between the two camps, preferring to incur the costs associated with the occasional routing blip than to go through the hassles of picking the potentially losing side of a standards war. Knieps Gunter, in his textbook *Network Economics* refers to this behavior as 'the penguin effect':
+We again return to the switching costs we first learned about in Chapter 3 — the costs paid by implementors when changing between different technological standards. In the case of BGP, these costs are steep: new firmware would have to be rolled out to routers supporting a new protocol, requiring maintenance and downtime. Operators would have to be trained in best practices for implementing that protocol, and finally connections would have to be updated one by one, peer by peer, organization by organization. This is almost infeasible in practice. The transition to the Network Access Point/Internet Exchange Point (NAP/IXP) paradigm kicked off a rush of peers eager to establish connections with each other (the theory being that better connected peers were more valuable). Due to the NAP model of interconnection, the number of connections between BGP speakers is exponentially greater than the number of connections between EGP speakers in the old NSFNet backbone – meaning that the number of organizations that would have to coordinate to upgrade to an entirely new protocol is also exponentially greater. An added wrinkle: the two competing proposals, soBGP and sBGP, came with two distinctly different sets of tradeoffs, which naturally meant two different camps of researchers and vendors were advocating past each other for their preferred protocol, instead of collaborating on a way to move forward to fix BGP-4’s problems. This led to an inevitable stalemate, as network operators waited for a clear victor to emerge between the two camps, preferring to incur the costs associated with the occasional routing blip than to go through the hassles of picking the potentially losing side of a standards war. Knieps Gunter, in his textbook _Network Economics_ refers to this behavior as 'the penguin effect':
 
 > ...penguins hovering on the edge of the ice attempt to let the others jump first into the water; although they are all hungry, each fears that there might be a carnivorous fish in the water (cf. Farrell & Saloner, 1987, pp. 13f.). The consequence may be a persistence of the status quo, even though all would prefer a switch to the new technology.
 >
-> -- Gunter, *Network Economics* [6]
+> -- Gunter, _Network Economics_ [6]
 
 Taking a step back from this particular issue and examining the history of Internet routing, we can see the shadows of what Internet engineers refer to as ossification — the tendency for protocols to become 'set in stone' as they become more widely adopted. The term “ossification” in reference to network protocols was first introduced in academic literature as early as 2005; researchers were grappling with the apparent inability to upgrade the TCP protocol, not because of the difficulties inherent in coordinating an upgrade between TCP speakers but because of the problems posed by "middleboxes"— in-band network devices, such as load balancers and firewalls, capable of intercepting, filtering, and modifying traffic in between TCP speakers. These middleboxes made assumptions about the behavior of the TCP protocol and mediated connections between TCP speakers, contributing to the process of ossification:
 
 > The Internet architecture assumes a common internetwork layer is sufficient substrate for building a global network, considering communication on a host-to-host basis [1]. Time has shown this to be only part of the story, however. Not only does the network need to know the hosts that are party to a communication, it has become clear that knowledge of higher layers are also required. This is visible in the plethora of middleboxes that have become part of the network, inspecting both transport layer headers and higher layer protocol data to ‘help’ endpoints and perform various policy enforcement functions. The tussle space [2] between application and service provider needs is not effectively realised by the IP layer of the Internet. Deep packet inspection and other tools are used to extract the information needed to enforce provider goals. This has resulted in widespread ossification of the network. Knowledge of the transport layer, and higher layer protocols, is encoded in middleboxes throughout the Internet. It is steadily more difficult to change the core network protocols, because doing so requires changes to increasingly many middleboxes and policies, in addition to the endpoints of the communication.
 >
-> -- McQuistin And Perkins, *Reinterpreting The Transport Protocol Stack To Embrace Ossification* [7]
+> -- McQuistin And Perkins, _Reinterpreting The Transport Protocol Stack To Embrace Ossification_ [7]
 
 In the earliest stages of the protocol adoption lifecycle, new features and functionality draw in new users, which in turn have new demands for new features and new functionality, leading to a virtuous cycle of constant experimentation until a tipping point is reached where stability and compatibility are preferable — where the demands of new users hoping for new features lose out to the demand of the existing user base for the continuation of the status quo, and where the existing user base is either unwilling or unable to coordinate the deployment of updates to the protocol. In the case of Internet routing, there was near universal agreement by users of the existing routing protocols on the need for a new topology and less reliance on backbone providers that served to drive the migration from EGP to BGP; similarly, there was a shared need for more efficient use of address space that lead the charge from BGP-1 up to BGP-4; and finally, the abrupt cessation in routing protocol changes was due to the explosive growth in BGP-4 speakers — an exponential increase in the existing user base for Internet scale routing — combined with a relatively weak demand to solve the problems of BGP-4, as most network operators were either ignorant of the consequences potential security issues inherent in BGP-4, unsure of which alternative protocol to choose if they wished to so much as contemplate upgrading, or simply content to live with the occasional disruption caused by inadvertent BGP route hijack snafus.
 
@@ -613,26 +552,23 @@ In his 2014 paper 'Why The Internet Only Just Works', Mark Handley describes the
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Since its inception, the Internet has had three major transitions between exterior routing protocols, from GGP to EGP to BGP. Each protocol transition was correlated – though not necessarily caused by — changes to the underlying physical network topology. Routing protocols are inextricably linked to the underlying physical structure of the Internet, as underlying the virtual connections between routing endpoint gateways are physical communications links in the real world.
 2.  The transition from a private research network to one where for-profit entities were free to interconnect was a massive undertaking. Most popular Internet histories trace the origin of the Internet with the ARPANET and then skip ahead to the days of the World Wide Web, skipping over the significant role that the NSFNet epoch and a handful of contractors at Merit played in shaping our present-day Internet. These changes were enabled by a cycle of iterating and updating the protocols responsible for routing packets; new commercial relationships and business models were made possible by the conscious design and implementation of new protocols.
 3.  Over time protocols can become more difficult to update and upgrade due to 'ossification', becoming rigid and less flexible over time, when there is more aggregate benefit to network operators in maintaining the status quo than there is potential benefit to be earned by drawing in new network operators with new features and functionality. More users make coordinating upgrades more difficult, and with differing incentive structures, the path to coordinating a mass upgrade to a protocol becomes less straightforward.
 
----
----
-
 # Chapter 6: Asleep, Tired, Or It Malingers: How Protocols Wither and Die
 
 So far, the protocols we've examined can be sorted into two buckets: those that were or are part of the core protocols that make up the Internet (NCP, TCP, DNS, BGP, IPv4 and the like), and those that weren't able to reach escape velocity beyond the community of researchers or vendors advocating for them (e.g., CLNP, SNA, DECNet, and most of the OSI suite of protocols). As we progress up from the foundational protocols to higher layers, we'll examine a new kind of failure mode: protocols whose adoption has plateaued or that have "failed to thrive". Each of the protocols we will examine in this chapter — NNTP, the protocol that powered Usenet; Gopher, an early competitor to HTTP; and SMTP, the protocol that to this day is used for e-mail delivery — solved real-world problems when first conceived, saw significant adoption in the early Internet, and each failed in their own unique way, whether by fading into obscurity or by living on as unloved zombies.
 
-### NNTP and the Strange Death of Usenet
+## NNTP and the Strange Death of Usenet
 
 While the protocol we will examine first, NNTP, was used to power Usenet, Usenet itself predated not only the protocol but even TCP. First conceived in 1979 and launched in 1980, Usenet was a sort of distributed message board, roughly analogous to the web forums of the early 2000s.
 
 > Usenet is a set of protocols for generating, storing and retrieving news "articles" (which resemble Internet mail messages) and for exchanging them among a readership which is potentially widely distributed. These protocols most commonly use a flooding algorithm which propagates copies throughout a network of participating servers. Whenever a message reaches a server, that server forwards the message to all its network neighbors that haven't yet seen the article. Only one copy of a message is stored per server, and each server makes it available on demand to the (typically local) readers able to access that server. The collection of Usenet servers has thus a certain peer-to-peer character in that they share resources by exchanging them, the granularity of exchange however is on a different scale than a modern peer-to-peer system and this characteristic excludes the actual users of the system who connect to the news servers with a typical client-server application, much like an email reader.
 >
-> -- Wikipedia, https://en.wikipedia.org/wiki/Usenet#Binary_content [1]
+> -- Wikipedia, [https://en.wikipedia.org/wiki/Usenet#Binary_content](https://en.wikipedia.org/wiki/Usenet#Binary_content) [1]
 
 If today's modern social media platforms were organized by users subscribing to topics instead of connecting to other users on a social graph, they might look a bit like Usenet did. As Usenet's design predated the DNS, it had its own peculiar naming convention: a top-level hierarchy of groups (for example, alt, rec, sci and comp) followed by one or more subjects. For example, the `rec.sports.football.eagles` Usenet group would be for discussions about the Eagles football team, while `rec.sports.basketball` would cover all topics related to the sport of basketball. Each leaf of the hierarchy after the top level would provide more granularity on a given topic. Users can subscribe to a newsgroup, and rely on their client software to keep track of the articles they have read. Most articles are responses to other articles, and the set of reply articles tracing back to one non-reply parent article is called a thread. Usenet articles are transmitted in a similar manner to Internet e-mail messages, in a format first specified in RFC 850, but unlike email they can be read by any user whose news server carries the group where the message was posted. Usenet does not have a central governing body. Each news administrator is independent, has complete control over their server, and can choose which newsgroups to offer access to. Nobody can dictate how a news administrator should configure their server. There is a de facto list — the "Big-8"— of newsgroups that serves as a jumping-off point for news administrators who wish to offer a default list of newsgroups to users. It's still true that any news administrator can choose to carry only the groups they want; the management board of the Big-8 simply creates a list of recommended groups and hopes that most news administrators will agree with their suggestions.
 
@@ -658,7 +594,7 @@ The negative impact of Eternal September on Usenet is difficult to overstate. Ma
 
 Usenet still exists today; there are many who still consider it useful; discussions happen there that simply don't occur anywhere else. But the one-two punch of `alt.binaries` congestion and Eternal September marked the beginning of Usenet's slide into irrelevance for the average Internet user, even with die-hard users still maintaining and contributing to newsgroups to this day, 16 years after PCMag had written Usenet’s obituary.
 
-### Gopher and The Myth of The First Mover Advantage
+## Gopher and The Myth of The First Mover Advantage
 
 In the early 1990s, before the World Wide Web came online, when dial-up information services like Prodigy and AOL were ascendant, a team of programmers at the University of Minnesota started working on a project to launch a Campus-Wide Information System (CWIS) at the behest of university administrators. The hope was that the CWIS would provide access to university information and email for faculty, and students; the unfortunate reality was that almost immediately after the project was announced, it became mired in a morass of academic red tape and bitter factionalism that one of the programmers would later describe as "a classic design-by-committee monstrosity."
 
@@ -674,7 +610,7 @@ Gopher programmer Robert Alberti later recalled:
 >
 > The Gopher team members were not shy about explaining to those who wrote with suggestions for improvements that we were prohibited from working on Gopher by the campus CWIS group, and we happily provided the names of University administrators to whom comments might be addressed. Senior University personnel began receiving calls and e-mails from other institutions complimenting them on Gopher and asking about the Gopher development prohibition. After a couple of months, Gopher’s popularity and undeniable utility became an embarrassment to the CWIS committee, and we were able to formally resume the work we had continued doing on our own time.
 >
-> -- Alberti, B. *Internet Gopher: A Bridge To The Web* [3] Retrieved from https://archive.org/details/internet_gopher_bridge_to_the_web
+> -- Alberti, B. _Internet Gopher: A Bridge To The Web_ [3] Retrieved from [https://archive.org/details/internet_gopher_bridge_to_the_web](https://archive.org/details/internet_gopher_bridge_to_the_web)
 
 With the users raring to go and the wind at their backs, the Gopher team was off to the races... for approximately eighteen months, from the initial release in 1992 to the summer of 1993. It's clear now, thirty years later, that Gopher never stood a chance as a competitor to HTTP, but why? How did a protocol with such a clear first-mover advantage and an enthusiastic base of early adopters collapse so completely?
 
@@ -690,13 +626,13 @@ The GopherCon announcement was not received with enthusiasm:
 >
 > “That socially killed Gopher,” Alberti says of the licensing fiasco.
 >
-> – Gihring, T. *The Rise And Fall Of The Gopher Protocol* [4] https://www.minnpost.com/business/2016/08/rise-and-fall-gopher-protocol/
+> – Gihring, T. _The Rise And Fall Of The Gopher Protocol_ [4] [https://www.minnpost.com/business/2016/08/rise-and-fall-gopher-protocol/](https://www.minnpost.com/business/2016/08/rise-and-fall-gopher-protocol/)
 
 The second reason, though perhaps less commonly cited, was cited by the programming lead of the Gopher project, Mark McCahill, in an interview years later: that the new Mosaic HTTP web browser, by providing a substandard Gopher client, curtailed user enthusiasm for the Gopher protocol:
 
 > What killed the protocol off was when people stopped using Gopher clients specifically and started using Mosaic. Mosaic had a shitty implementation of Gopher, and they had zero interest in improving their implementation of Gopher, or supporting any of the new stuff. But once the bulk of the people were running Mosaic 9 we could think of new things to do with the protocol and improve the client all we wanted. It didn’t matter. I learned a good lesson. Control the client.
 >
-> – Frana, P. *Interview with Mark McCahill* [5]
+> – Frana, P. _Interview with Mark McCahill_ [5]
 
 As a project lead, McCahill would be the best placed to make such a judgment; I personally find it a more convincing argument than the idea that the licensing fee, if only because it was the announcement of a licensing fee and not the imposition of an actual licensing fee itself, was the cause of the rapid decline in Gopher's popularity.
 
@@ -706,15 +642,15 @@ As I read through the oral histories and interviews with the Gopher team, I foun
 >
 > A meaningful answer to this question cannot simply be derived from looking at the current state of technology and then drawing a rigid line of causation into the past. Using the current state of Gopherspace to argue for its technologically inevitable demise is tantamount to arguing for the obvious superiority of VHS over Beta by pointing out how much more selection of cassettes and players are currently available for the former format than the latter. There is clearly much more going on in that case than picture quality and storage capacity. Broad social trends, roughly what an economist would call "network externalities," play a significant part in the adoption of one technology over another. I contend that, much as one brand of blue jeans does not win over more consumers than another brand simply based on the comfort and durability of its material, the Web did not overshadow Gopher simply based on the technical qualities of HTTP as a protocol.
 >
-> -- Lee, C. *Where Have All The Gophers Gone?* [6] https://ils.unc.edu/callee/gopherpaper.htm
+> -- Lee, C. _Where Have All The Gophers Gone?_ [6] [https://ils.unc.edu/callee/gopherpaper.htm](https://ils.unc.edu/callee/gopherpaper.htm)
 
 Christopher Lee's paper, ‘Where Have All The Gophers Gone’, is a deep and nuanced investigation into the root causes of Gopher's failure. His conclusion was that, ultimately, Gopher's downfall was due to the inability to capture mindshare beyond its initial enthusiastic user base — with bad publicity from the licensing fiasco, institutional influences, failure to follow the open systems model of development, and social inertia all serving as contributing factors to this inability to gain traction. Put more plainly: it is inaccurate to say that Gopher somehow lost the battle for hearts and minds against HTTP. Instead, the very nature of what Gopher was made it impossible to enter that battle in the first place. As an academic skunkworks project crafted by a tight-knit group of developers at a single university, it was doomed to lose against HTTP, whose arrival began with an open call for collaboration with developers across the world.
 
 > The major issue was not the original configuration of the protocol but instead the fact that it did not become a test bed. Mind share moved from Gopher to the Web, leaving only a handful of developers at the University of Minnesota and a few other places to tweak Gopher to meet a rapidly increasing demand and level of expectations.
 >
-> -- Lee, C. *Where Have All The Gophers Gone?* [6] https://ils.unc.edu/callee/gopherpaper.htm
+> -- Lee, C. _Where Have All The Gophers Gone?_ [6] [https://ils.unc.edu/callee/gopherpaper.htm](https://ils.unc.edu/callee/gopherpaper.htm)
 
-### SMTP (Email): Too Old to Die Young
+## SMTP (Email): Too Old to Die Young
 
 It feels strange to put SMTP on a list of failed protocols. It's widely used and adopted, with no apparent competitors and no signs of slowing down any time soon. For decades now, every new university student and almost every new employee of a business of any reasonable size is issued a new email address, and a familiar part of the process of signing up for or logging in to almost any software application is being prompted for your email address.
 
@@ -734,7 +670,7 @@ Spam prevention was dealt with more bluntly in the early days of SMTP. When conf
 >
 > Today’s email servers will claim to accept incoming mail but will delete it as soon as it is received, a practice referred to as blackholing. The email servers operated by tech giants permanently blacklist wide swaths of IP addresses and delete their emails without notice. Their back end infrastructure runs algorithms across huge datasets so that most spam doesn't appear on your inbox.
 >
-> – Lopp, J. *The Death Of Decentralized Email* [7] https://blog.lopp.net/death-of-decentralized-email/
+> – Lopp, J. _The Death Of Decentralized Email_ [7] [https://blog.lopp.net/death-of-decentralized-email/](https://blog.lopp.net/death-of-decentralized-email/)
 
 While in theory, SMTP is an open protocol and email deliverability is guaranteed end-to-end to anyone capable of running a mail server that speaks SMTP; in practice, a mail server that finds itself on a blacklist that is used by Google's Gmail or Microsoft's Outlook mail servers is effectively useless, even if it's able to deliver email unimpeded to the rest of the Internet. The large user base of these centralized SMTP service providers allows them to serve as de facto arbiters of email deliverability. A choice between reaching 80% of users 90% of the time or 100% of users 100% of the time for the same price is no choice at all; users will naturally flock to the larger email providers to ensure they are able to deliver email without worrying about their messages silently being dropped. As more users transition to larger email providers, smaller providers become less relevant, and a de facto oligopoly emerges.
 
@@ -742,26 +678,23 @@ SMTP's failure state is perhaps the most personal for me; I've run my own mail s
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  **NNTP (Usenet):** NNTP was omnipresent in the days before the World Wide Web became popular but was abandoned by many ISPs as well as early users. There were two reasons for this, the first being the economic problem of free riders, where users could enjoy the benefits of storing data on Usenet without paying any costs to contribute to its operation. The second was the social problem caused by "Eternal September," the influx of users of online information services such as AOL and Delphi in the early 1990s, whose lack of understanding of Usenet's social norms disrupted the existing community and its culture, leading to frustration and disillusionment among users who had played a part in building Usenet culture before their arrival.
 2.  **Gopher:** Gopher, a hypertext-oriented client-server protocol, "lost" mindshare and users to HTTP despite having a first-mover advantage and early adopters. One commonly cited reason for Gopher's failure was the decision by the University of Minnesota, which supported Gopher's development, to charge licensing fees for for-profit users. This move led to a backlash from the user community, who felt betrayed and were not willing to pay for a previously free and open-source protocol. The lack of additional funding and resources also hindered Gopher's development, as the small team behind it struggled to meet user demands and expectations. Finally, the stark cultural disparities in the software development lifecycle as managed by a group of engineers used to writing software for university administrators, hindered by budget constraints and bureaucratic red tape, versus the HTTP project's focus on dialogue and collaboration with other developers around the world, made contributing to the Gopher project less appealing in comparison.
 3.  **SMTP:** SMTP, the protocol used for email delivery, has not declined in usage in the same way as NNTP and Gopher. Indeed, most Internet users interact with the SMTP protocol on a regular basis. However, since the problems of authenticating identity and preventing spam have not been addressed within the protocol, third-party vendors have filled the gap by providing solutions outside of the protocol. Users have migrated their email inboxes en masse to the vendors offering the best solutions to their problems (e.g. Gmail), and this massive crowd of users has in turn given the vendors leverage to filter and exclude connections from other smaller SMTP servers and corral their users into a de facto "walled garden". In theory, anyone is free today to spin up an SMTP server using open source software and their choice of Internet Service Provider; in practice, the ability to guarantee the deliverability of email for end users and to avoid the endless headaches of sent emails being silently dropped or filtered are limited to a handful of large vendors — a de facto email oligopoly.
 
----
----
-
 # Chapter 7: The Street Finds Its Own Use For Things: The World Wide Web From CERN to Snowden
 
 Writing a single chapter on the Hypertext Transfer Protocol (hereafter, HTTP) is a daunting proposition. An exploration of the protocol that changed the world and our understanding of how we relate to each other as a species could easily fill its own separate text. As the focus of this book is on the history of Internet protocols, we'll narrow our scope to two points in particular: the first being the 'founding myth' of the free and open Web as contrasted with the reality of the HTTP's client-server design, creating a new paradigm of restrictive control; the second being the transition from HTTP to HTTPS in the wake of the Snowden revelations in 2013.
 
-### A New Hope
+## A New Hope
 
 HTTP was first proposed as a literal science experiment 'concerning the management of general information about accelerators and experiments at CERN' by physicist Tim Berners-Lee. Berners-Lee wanted to leverage the concept of hypertext to deal with the problem of keeping track of information related to large projects in a distributed organization where employees were constantly leaving:
 
 > A problem, however, is the high turnover of people. When two years is a typical length of stay, information is constantly being lost. The introduction of the new people demands a fair amount of their time and that of others before they have any idea of what goes on. The technical details of past projects are sometimes lost forever, or only recovered after a detective investigation in an emergency. Often, the information has been recorded, it just cannot be found. If a CERN experiment were a static once-only development, all the information could be written in a big book. As it is, CERN is constantly changing as new ideas are produced, as new technology becomes available, and in order to get around unforeseen technical problems. When a change is necessary, it normally affects only a small part of the organisation. A local reason arises for changing a part of the experiment or detector. At this point, one has to dig around to find out what other parts and people will be affected. Keeping a book up to date becomes impractical, and the structure of the book needs to be constantly revised.
 >
-> -- Berners-Lee, T. *Information Management: A Proposal* CERN, March 1989 http://cds.cern.ch/record/369245/files/dd-89-001.pdf [1]
+> -- Berners-Lee, T. _Information Management: A Proposal_ CERN, March 1989 [http://cds.cern.ch/record/369245/files/dd-89-001.pdf](http://cds.cern.ch/record/369245/files/dd-89-001.pdf) [1]
 
 The information management system that Berners-Lee envisioned was to be powered by hypertext — articles linked to other articles — a metaphorical 'web' of articles all connected to each other instead of a hierarchically indexed system.
 
@@ -775,7 +708,7 @@ Myths are the stories that human beings tell themselves to help them explain the
 >
 > As Marcel Mauss has shown in his classic essay (Mauss 1990), every gift bears its donor’s identity. In this regard, the sacrifice of Berners-Lee and the gift of the Web to society is a ‘personal renunciation that nourishes social forces’ (Hubert and Mauss 1964: 102). It is not just a technological transfer; it is also a transfer of meanings and values. The sacrifice is thus an act that reinforces the characterization and the identity of the hero as much as the intrinsic value of his invention. More broadly, the refusal to receive money or any other advantage from his invention, which coincides with the sacrifice of the hero, does not only contribute to the hagiography of Berners-Lee, but also strengthens the analogy between the Web’s inventor and the Web itself, which is also portrayed as a neutral space in terms of economic interests and power. In this way, the sacrifice of the hero makes the Web a milestone, a final step in the dominant narrative of Internet history which depicts the final evolution of the ‘network of networks’ as a horizontal space for information exchange and peer-to-peer production — a sacred gift to society.
 >
-> -- Bory, *The Internet Myth* [2]
+> -- Bory, _The Internet Myth_ [2]
 
 In contrast to the founding myth, the early days of the 21st century saw the rise of new corporate players — Amazon, Google, Paypal, and eBay being the most recognizable to us today — that were able to amass significant power due to first-mover advantages. There were relatively few websites competing for user mindshare compared to the present day Internet, and those that were able to attract and monetize users reinvested their profits in improving their user experience, attracting more users, bringing them more revenue, and repeating the cycle. Network scientists like Albert-László Barabási have described in detail the concept of 'preferential attachment'— the tendency for new users joining a network to choose to connect to popular nodes that already have large numbers of existing users they can interact with. This tendency can lead to what network economists such as Varian and Shapiro describe as positive feedback loops — more vendors at your local farmers market will lead to more shoppers visiting the market, which in turn will attract more vendors — and their obvious corollary, negative feedback loops, as for example when too many shoppers leads to a crowded marketplace where buyers are stuck waiting in queues and vendors are unable to complete sales faster than new buyers arrive, eventually driving more and more shoppers away from the market.
 
@@ -787,17 +720,17 @@ The feedback-driven explosive growth of the early entrants to the Web has turned
 >
 > More importantly, government officials in the United States and Europe forged the enforcement partnership between rights holders and macrointermediaries outside of traditional democratic, legislative processes. The result: prominent, mostly U.S. and European rights holders have the capacity and authority to crack down on the online trade in counterfeit goods and copyright-infringing content. Simply put, companies like Nike, Disney, and Apple have the explicit support of the U.S. government (and official support from the U.K. government and European Commission) to set and enforce rules globally on the Internet. Their rules, crafted in the United States and Europe and exported globally, can potentially affect hundreds of millions of people who, every day, use the services of the U.S. Internet companies and payment providers.
 >
-> -- Tusikov, *Chokepoints* [3]
+> -- Tusikov, _Chokepoints_ [3]
 
 The rise of these “macrointermediaries” has turned the initial narrative of the Web on its head, inverting it; the myth of a free and open digital frontier giving way to a new myth of a panopticon-like "control society" [4], to borrow Deleuze's phrasing, one where users are obliged to submit to the rules agreed upon in secret between the macrointermediaries and the State, with few avenues for appeal or recourse if they find their transactions blocked by PayPal, their content demonetized by YouTube, their websites delisted by Google, or their accounts deleted by Twitter.
 
 > Control societies are characterized by a distributed system that consists of continuous visibility across time and space and the short-term regulating of movement and acts via modulation. As Deleuze states, in control societies, “The numerical language of control is made of codes that mark access to information, or reject it.” Borrowing from William Burroughs, Deleuze’s conception of control is not about influence or restraint, but rather a logic, or...a protocol, that gives the impression of freedom while one’s choices and behaviors are modulated and generatively shaped for them.
 >
-> -- Dixon-Román, E. *Control Societies @ 30: Technopolitical Forces and Ontologies of Difference* [5]
+> -- Dixon-Román, E. _Control Societies @ 30: Technopolitical Forces and Ontologies of Difference_ [5]
 
 Just as the founding myth of the HTTP protocol is not quite an accurate portrayal of reality, so is this modern inversion. The Web is in fact just as open as it was in its inception; any Web user is free to operate their own website, and no one is compelled by force to make use of Facebook or Amazon. But, again, as the myth is easier to digest and comprehend than reality, it is able to displace reality in the collective unconscious. Reality is messy and resists narration. The lack of mythical heroes means there are no hero's journeys and no narrative arc to imbue life with meaning; no mythical villains means there are no challenges to overcome, no battles to win, and thus no victories to celebrate. We may live in reality, but we need myths to feel alive. The myth of the web as techno-feudal dystopia is deeply satisfying and easily digestible; the reality that anyone can spin up their own web server and take a stab at being the next Instagram, Facebook, or TikTok if they're willing to put in the work is almost infuriating in comparison, as it reminds us that we are unwilling to do that work. The Web we have today is quite literally the Web we deserve.
 
-### Panic at the Data Center
+## Panic at the Data Center
 
 In 2013, the Internet engineering community was hit by a seismic shock in the form of what has come to be known as the Snowden revelations. A series of documents leaked by former NSA contractor Edward Snowden unveiled a vast surveillance infrastructure that had been operating in the shadows, undermining the sense of privacy and security on the World Wide Web. In particular, the National Security Agency, or N.S.A., the intelligence arm of the United States Department of Defense, was revealed through its PRISM and MUSCULAR programs to be intercepting and analyzing vast amounts of online communications, including emails, chat messages, and browsing histories, of both U.S. citizens and individuals worldwide. The impact of the Snowden leaks sent shockwaves that reverberated not only through the Internet engineering community but also across governments, civil liberties organizations, and the global public at large.
 
@@ -823,7 +756,7 @@ The migration from HTTP to HTTPS was the largest uncoordinated protocol transiti
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Founding myths, being easier to digest and comprehend than messy realities, cement the underlying conceits of protocols in the minds of their users. Like all narratives, they are ripe for inversion with the passage of time. The founding myth of the web was that it was free, open, and available to all; the current myth is that it is a corporate oligarchy dominated by predatory companies like Facebook and Google, peddling disinformation and ads. These myths may not bear much resemblance to reality, but that doesn't make them or the impact they have on the subjective experience of users of the Web any less 'real'.
 2.  The client-server paradigm of the HTTP protocol, combined with positive feedback loops, has led to the transformation of large Web server operators into 'macro-intermediaries', capable of enforcing and regulating speech and commerce for large crowds of users.
@@ -839,17 +772,17 @@ Overlay networks are an attempt to untangle this Gordian knot — to have applic
 
 > An overlay network is a network that is built on top of an existing network. The overlay therefore relies on the so-called underlay network for basic networking functions, namely routing and forwarding. Today, most overlay networks are built in the application layer on top of the TCP/IP networking suite. Overlay technologies can be used to overcome some of the limitations of the underlay, at the same time offering new routing and forwarding features without changing the routers. The nodes in an overlay network are connected via logical links that can span many physical links. A link between two overlay nodes may take several hops in the underlying network.
 >
-> -- Tarkoma, *Overlay Networks* [1]
+> -- Tarkoma, _Overlay Networks_ [1]
 
 The widespread use of VPN services means that most Internet users are familiar with overlay networks in practice, if not in theory. What is a Virtual Private Network, after all, if not the simplest possible routing overlay on top of the existing Internet? In this chapter we will narrow our focus to the two arguably most successful — certainly most widely adopted — overlay networks: the anonymity network Tor and the file-sharing network BitTorrent.
 
-### Tor
+## Tor
 
 Tor, short for The Onion Router, was developed in the 1990s by David Goldschlag, Mike Reed, and Paul Syverson at the United States Naval Research Lab. Realizing that the design of the routing and addressing layer of the Internet was fundamentally incompatible with privacy and anonymity for Internet-connected hosts, they began to work on a new approach to routing packets, with the goal of keeping user information private by encrypting routing information at the source and adding layers of encryption for each stop between the source and destination. The name 'Onion Routing' was chosen to describe the peeling off of these layers of encryption.
 
 > Onion Routing is an approach to achieving the separation of the identity of the user from the routing information used to guide signals around the Internet. This effectively nullifies one of the major “control points” built into the Internet, making the origin and destination of traffic no longer trivially identifiable by the Internet Service Provider (and hence the state). In the Onion Routing design, users’ Internet traffic is bounced around a network of volunteer-operated servers (known as “relays”) located around the world in order to disguise its origin and destination. First, the administrative information that routes users’ traffic around the Internet is wrapped in three layers of encryption. This traffic is then sent as a series of packets to the relay network. The traffic is first sent to an entry relay — a server that decrypts the first layer of encryption and reveals the address of the next relay in the chain. This next, “middle” relay decrypts the next layer of encryption, revealing the “exit” relay’s address. The exit relay then decrypts the last layer of encryption, finds the final destination of the traffic, and sends it on. Thus, no part of the network knows both the origin and the destination of the traffic, and anyone observing a particular user only sees them connecting to the network, not which websites they are accessing. This allows users’ identities to be concealed, becoming indistinguishable in a crowd of millions of other users.
 >
-> – Syverson, Dingledine, and Mathewson (2004) Retrieved from https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html [2]
+> – Syverson, Dingledine, and Mathewson (2004) Retrieved from [https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html](https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html) [2]
 
 A core requirement for a functional onion routing overlay network is a large crowd of users. While onion routing disassociates user identity from routing information, in a network where only a handful of users are sending traffic, it's trivial to deanonymize user data by running exit relays that inspect outbound user traffic and try to correlate it to known users. The larger and more diverse the set of users, the easier it becomes for any single user's traffic to be 'lost in the crowd'. Accordingly, an onion routing system requires a large set of uncorrelated users with different usage patterns, as well as different reasons for desiring privacy and anonymity in the first place. Consider an anonymous overlay network that was used exclusively by members of a criminal gang of malicious hackers; any inbound connections from known exit relays of the network would simply be dropped by hosts, as there would be no benefit in allowing them.
 
@@ -857,13 +790,13 @@ Realizing the power of literal safety in numbers, the U.S. Naval Research Lab re
 
 > As of mid-May 2004, the Tor network consists of 32 nodes (24 in the US, 8 in Europe), and more are joining each week as the code matures. (For comparison, the current remailer network has about 40 nodes.) Each node has at least a 768Kb/768Kb connection, and many have 10Mb. The number of users varies (and of course, it's hard to tell for sure), but we sometimes have several hundred users — administrators at several companies have begun sending their entire departments' web traffic through Tor, to block other divisions of their company from reading their traffic. Tor users have reported using the network for web browsing, FTP, IRC, AIM, Kazaa, SSH, and recipient-anonymous email via rendezvous points. One user has anonymously set up a Wiki as a hidden service, where other users anonymously publish the addresses of their hidden services.
 >
-> – Syverson, Dingledine, and Mathewson (2004) Retrieved from https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html [2]
+> – Syverson, Dingledine, and Mathewson (2004) Retrieved from [https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html](https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html) [2]
 
 Tor's popularity amongst Internet users increased in 2008 with the release of the Tor browser, a Web browser with support for Tor integrated directly, so that users can access both `Tor.onion` URLs as well as plain HTTP URLs alongside each other without having to worry about setting up relays or putting in any more effort than they would have to do when switching between other browsers such as Chrome or Firefox. The Arab Spring protests of 2010 and the Snowden revelations of 2013 led to widespread awareness among Internet users of the lack of privacy on the Web, the risks of surveillance and censorship by nation-state actors, and the utility of Tor for protecting themselves against these risks. This has led to a veritable flood of users adopting Tor and volunteering to run relays, increasing the size of the crowd and thus the anonymity of users of the Tor network, leading to increased protection and more users adopting Tor, leading to the current network size of thousands of nodes and millions of active users.
 
 In times of protest and political turmoil, authoritarian governments routinely attempt to clamp down on access to the Tor network, either through active attacks like filtering access to bridges or passive attacks like deanonymization. The size of the Tor crowd and all the downstream benefits, such as performance and anonymity, that come from that size, have been instrumental in blunting the impact of these attacks. Every new attempt at filtering or blocking access has been met with a new wave of bridges, trackers and proxies being brought online, and new methods of obfuscating Tor usage from prying eyes. The ongoing efforts and support from the global community of volunteers who run the Tor network to resist these attacks has played a decisive role in ensuring the network's resilience and utility, enabling it to survive and thrive.
 
-### BitTorrent
+## BitTorrent
 
 BitTorrent rose from the ashes of Mojonation, a for-profit company that employed BitTorrent architect Bram Cohen. Mojonation's goal was to bootstrap a peer-to-peer network where users could buy and sell computational resources such as disk space, bandwidth, and processing time. Frustrated with Mojonation's inability to attract funding and launch an operational network, in April of 2001, Bram began to focus on his own personal project, inspired by what he saw as a fundamental flaw in the design of the Internet: transferring data in spite of asymmetric bandwidth limits.
 
@@ -873,7 +806,7 @@ The asymmetric bandwidth problem, in a nutshell, was caused by Internet service 
 >
 > Cohen’s idea to overcome the problem of asymmetric bandwidth was to have a large quantity of users upload a file at once. Although individually each one of them would be uploading at a fraction of the receiver’s download rate, communally they would max it out, providing a much faster transfer than a simple one-to-one transfer. If the file was broken down into pieces, the downloader could receive different pieces of the file from different sources at any one time. Furthermore, if the software could ensure that the pieces were ordered properly after they arrived, it wouldn’t even be necessary to download them in order. This would make things even quicker as pieces would be downloaded if they were available, regardless of whether they were the ‘next’ piece or not. As download order didn’t matter, downloads could be stopped and resumed later, allowing them to be spread out across multiple sessions. Having files in pieces even meant that it was not necessary to have the entire file before you were able to supply other users with copies of the pieces you already had. As more users joined in the ‘swarm’ there would be more copies of individual pieces available and more sources to download from, making the network faster as the load increased, a complete turnaround in data distribution principles.
 >
-> -- Robertson, *Digital Culture Industry* [3]
+> -- Robertson, _Digital Culture Industry_ [3]
 
 Solving the asymmetric bandwidth problem enabled users to distribute data exponentially faster than they had before. Cohen first demonstrated BitTorrent's speed and utility by distributing a free pornographic video at blazing fast speeds. From that initial publicity stunt he moved on to more ‘acceptable’ use cases, like helping users distribute large collections of live music recordings and Linux software distribution images. These demonstrations showcased BitTorrent’s core value proposition: download speeds for large files actually became faster as they became more popular. Perhaps unsurprisingly, in retrospect, this led to widespread BitTorrent adoption amongst users trading copyrighted videos such as popular feature films and prime-time television shows. Before BitTorrent, a centralized server offering such files for download would be quickly saturated and unusable for most clients; on the off chance a server could survive and stay online, the server operators could expect to receive a legal cease-and-desist notice for offering copyrighted media for download. The swarm of BitTorrent users turned that problem on its head. The approach of distributing data across a swarm of users, perhaps not coincidentally similar to Tor's approach of anonymizing traffic by routing it through a large crowd of users, inadvertently solved a problem that had led to the demise of the peer-to-peer file sharing application Napster: the removal of a centralized chokepoint that could be served with a copyright infringement lawsuit.
 
@@ -889,13 +822,11 @@ Designed to solve the technical problem of slow file transfers, BitTorrent ended
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Overlay networks are networks built on top of the global Internet, using it as a bootstrapping mechanism for finding peers to connect to and build new virtual networks with. These new virtual networks are able to incorporate features and functionality that the existing Internet cannot.
 2.  The most successful overlay networks rely on the size of the crowd of users connected to them to provide functionality that users cannot individually leverage by themselves — the anonymity of being lost in the crowd in the case of Tor and bandwidth that is more than the sum of its parts in the case of BitTorrent.
 3.  By removing central points of control and distributing responsibilities among their participants, overlay networks like Tor and BitTorrent have inadvertently opened a new realm where users are able to contest and resist legal coercion and government control. Members of the crowd collectively empower each other to assert their rights in ways that users relying on client-server protocols, such as HTTP with clients running web browsers and servers operating websites, cannot.
-
----
 
 # Chapter 9: Bitcoin…
 
@@ -903,7 +834,7 @@ For an overlay network that has made such an outsized impact on recent Internet 
 
 > A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network.
 >
-> -- Nakamoto, S. *Bitcoin White Paper* [1]
+> -- Nakamoto, S. _Bitcoin White Paper_ [1]
 
 Addressing the problem of double-spending, where the value of a banknote or coin is redeemed more than once, is a core requirement for any viable monetary system. Governments expend a tremendous amount of resources and effort to mitigate one facet of the double-spend problem: counterfeiting, where new tender is issued without the backing or endorsement of the State. In pre-modern times, coins were stamped with pictures of monarchs or appeals to Almighty God. This served the dual purpose of promoting the authority of the monarch over the realm and assuring citizens that the integrity and authenticity of the coins were vouched for by a central authority. The concern that coins could be issued and stamped without approval was constant, and counterfeiting was considered tantamount to treason and, in many countries, punishable by death.
 
@@ -913,14 +844,14 @@ Nakamoto proposed an elegant hack to work around the need for a central authorit
 
 > The steps to run the network are as follows:
 >
-> 1) New transactions are broadcast to all nodes.
-> 2) Each node collects new transactions into a block.
-> 3) Each node works on finding a difficult proof-of-work for its block.
-> 4) When a node finds a proof-of-work, it broadcasts the block to all nodes.
-> 5) Nodes accept the block only if all transactions in it are valid and not already spent.
-> 6) Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of the accepted block as the previous hash.
+> 1. New transactions are broadcast to all nodes.
+> 2. Each node collects new transactions into a block.
+> 3. Each node works on finding a difficult proof-of-work for its block.
+> 4. When a node finds a proof-of-work, it broadcasts the block to all nodes.
+> 5. Nodes accept the block only if all transactions in it are valid and not already spent.
+> 6. Nodes express their acceptance of the block by working on creating the next block in the chain, using the hash of the accepted block as the previous hash.
 >
-> -- Nakamoto, S. *Bitcoin White Paper* [1]
+> -- Nakamoto, S. _Bitcoin White Paper_ [1]
 
 Nodes that participate in the Bitcoin proof-of-work contest are issued virtual representations of coins for each block found as a reward for winning the contest, as well as all of the fees paid by users to have their transactions included in that block; they are then free to distribute these coins as they see fit. While it is relatively difficult to win the proof-of-work contest — participants have roughly ten minutes to solve the puzzle before anyone else, broadcast a block, and expend a tremendous amount of computational resources to do so — it is trivial to verify the results of the proof-of-work contest and thus confirm the entire history of coin issuance and transactions of coins. Removing the ability of central authority to debase the currency was one of Nakamoto's primary goals in designing Bitcoin [1]; making coins difficult for any member of the network to create but trivial for any member to audit was how he accomplished it.
 
@@ -932,7 +863,7 @@ Recall Nick Szabo's words quoted in Chapter 4 about the "property rights nature 
 
 In the first few years after the Bitcoin network came online, coins were given away for free or traded as novelties, with little if any real economic value assigned to them by users of the network. With few participants and little processing power attached to the network, proof-of-work contests – colloquially, ‘mining blocks’— was relatively easy for any user willing to run the software. As user adoption grew, so did enthusiasm and speculation (along with processing power dedicated to mining Bitcoin blocks and collecting the associated rewards). A land rush dynamic, similar to the one that took place when domain names first became available for purchase, soon took hold, but not before the majority of early adopters had either given their coins away, lost access to the keys that secured them, or squandered them on ill-fated speculative ventures. This initial 'golden age' is one of the reasons that many users of the Bitcoin overlay network consider it impossible to replicate; alternative attempts at bootstrapping distributed timestamp networks would need to both a) either solve a more compelling problem than Bitcoin has (that is, obviating the need for a central clearing authority) or solve it in a more compelling fashion and b) solve a problem that was resolved by an accident of fate, the "fair launch" problem of founders and early adopters hoarding coins.
 
-### The Blocksize War
+## The Blocksize War
 
 In the early years of Bitcoin's operational history, sending coins from one address to another was fast and inexpensive...sort of. It was 'fast', in the sense that early users didn't fully appreciate the need to wait for nodes to chain more blocks on top of the blocks that included their transactions, to be sure the block that includes their transaction isn't replaced in a reorganization of the chain.
 
@@ -945,7 +876,7 @@ In the early years of Bitcoin's operational history, sending coins from one addr
 >
 > In practice, the community has adopted 6 blocks as a standard confirmation period. That is, once a transaction is included in a block in the blockchain which is followed up by at least 6 additional blocks, the transaction is called “confirmed.”
 >
-> – https://www.coincenter.org/education/crypto-regulation-faq/how-long-does-it-take-for-a-bitcoin-transaction-to-be-confirmed/ [2]
+> – [https://www.coincenter.org/education/crypto-regulation-faq/how-long-does-it-take-for-a-bitcoin-transaction-to-be-confirmed/](https://www.coincenter.org/education/crypto-regulation-faq/how-long-does-it-take-for-a-bitcoin-transaction-to-be-confirmed/) [2]
 
 Despite the present-day understanding that at least six blocks need to be built on top of the block including a transaction before that transaction can be considered “confirmed”, many early adopters treated transactions with no blocks built on top of them – “0-conf” transactions – as if they were effectively irreversible. This misunderstanding was compounded by how inexpensive transactions were in those early years. All Bitcoin transactions have fees associated with them; the fees are paid to the miners as an incentive to include the transaction in a block.
 
@@ -957,7 +888,7 @@ Despite the present-day understanding that at least six blocks need to be built 
 >
 > Historically it was not required to include a fee for every transaction. A large portion of miners would mine transactions with no fee given that they had enough "priority". Today, low priority is mostly used as an indicator for spam transactions and almost all miners expect every transaction to include a fee. Today miners choose which transactions to mine only based on fee-rate.
 >
-> – Bitcoin Wiki, https://en.bitcoin.it/wiki/Miner_fees [3]
+> – Bitcoin Wiki, [https://en.bitcoin.it/wiki/Miner_fees](https://en.bitcoin.it/wiki/Miner_fees) [3]
 
 The fee associated with a transaction can be modeled as a sort of congestion pricing; when many transactions are outstanding, miners choose which transactions to include in the next block based on how profitable the fees are. Each unconfirmed transaction is essentially bidding for space in the next block against every other unconfirmed transaction. If there are not enough pending transactions to fill a block, then transactions with higher fees attached should not, in theory, crowd out transactions with lower fees; only with full blocks will transactions become 'expensive'.
 
@@ -970,7 +901,7 @@ Misery, it is said, is a function of misplaced expectations. As the Bitcoin netw
 > 3.  The significance of the nodes of ordinary users: The extent to which, if any, validating nodes of the ordinary end users had a say in enforcing Bitcoin’s protocol rules.
 > 4.  Time preferences: Whether Bitcoin was like a tech startup which should prioritise gaining market share in the short term; or if it was a long-term project, a new global money.
 >
-> -- *The Blocksize War* [4]
+> -- _The Blocksize War_ [4]
 
 Putting aside technical and philosophical motivations, the question the participants in the conflict found themselves trying to answer was as straightforward as it was perplexing: "Who gets to make changes to the rules of Bitcoin?"
 
@@ -986,27 +917,25 @@ Recounting the full history of the conflict would require its own book; Jonathan
 
 > It was now, finally, widely accepted that arranging meetings with large corporations in the space and trying to decide on changes to the protocol rules would not work. The majority of miners also did not have the ability to relax protocol rules. If one wants to change the protocol rules, one has to persuade and campaign for the support of end users and investors, who need to opt-in to the new rules. It was ordinary users who had the final decision-making power, and this was the financial sovereignty that made Bitcoin unique and compelling. After an astounding victory, the small block narrative, that end users had to agree to protocol rule changes, was finally seen as compelling.
 >
-> -- *The Blocksize War* [4]
+> -- _The Blocksize War_ [4]
 
-### ... And Everything After
+## ... And Everything After
 
 Nakamoto's invention, and particularly the land rush dynamic that emerged during the early golden age, spawned literally thousands of alternate cryptocurrencies, each scrambling to implement new features and functionality to differentiate themselves, with promises of future riches woven into narratives about being The Next Bitcoin. An analysis of other cryptocurrencies besides Bitcoin might be theoretically interesting at this point, but practically speaking, there are no new protocol dynamics at play here; the implementation of a distributed timestamping network was Nakamoto's invention, and the actual protocol that nearly every attempted Bitcoin successor relies on is HTTP, inheriting the limitations of HTTP's client-server model. It's difficult to convince users to download, install, and run peer-to-peer software when clients can readily connect to default HTTP-accessible nodes with little effort. Almost every alternative to Nakamoto's software relies on this dynamic of clients (at least, the bulk of them) connecting to HTTP gateways instead of running their own nodes in a peer-to-peer network, and accordingly, the analysis of the HTTP protocol in Chapter 7 applies to them as well. It's not possible for users of a client-server protocol like HTTP to assert their rights as Bitcoin users did during the Blocksize War; clients are at the mercy of the server. As of the writing of this text, it doesn't appear likely that Bitcoin will find any competition for the services it provides as a timestamping network; the switching costs for Bitcoin users to move to a new network grow higher with every block.
 
 ---
 
-### Takeaways:
+## Takeaways
 
 1.  Satoshi Nakamoto's invention — a distributed timestamp network to remove the need for a central clearing authority to issue and verify the integrity of a currency — created a new type of public directory of data, one with a fundamentally different set of property rights than any preceding Internet-connected data store.
 2.  The Blocksize War was a watershed moment in the history of the Internet and peer-to-peer software. Crowds of users were able to subvert the will and intentions of developers trying to assume the mantle of benevolent dictators for life, cryptocurrency exchanges, well-monied investors, and CEOs of large corporations simply by choosing which software they were willing to run.
 3.  Because no other network has passed through the same trial-by-fire that Bitcoin was forced through by the Blocksize War, and no other network appears to have had a large population of users willing to run their own software and assert their rights over what rules the network should adhere to, there doesn't appear to be any alternative to Bitcoin for the functionality it provides. We're stuck with this version of the network, come what may.
 
----
-
 # Chapter 10: The End Of The Beginning (Of The Internet)
 
 > The state is not something which can be destroyed by a revolution, but is a condition, a certain relationship between human beings, a mode of human behaviour; we destroy it by contracting other relationships, by behaving differently.
 >
-> – Ward, Colin. *Anarchism: A Very Short Introduction* [1]
+> – Ward, Colin. _Anarchism: A Very Short Introduction_ [1]
 
 This text began with a history of the lowest layer of the TCP/IP protocol suite from the very first protocol, NCP, on to TCP/IP, and up the entire stack of Internet protocols, visiting DNS, BGP, and HTTP/S — the protocols at the core of daily Internet experience for billions of users — and finally arriving at the overlay networks. There are no higher levels to ascend to.
 
@@ -1024,7 +953,7 @@ If you have been reading all this and are surprised at this last paragraph: beli
 
 We will first examine how network protocols are governed — that is, how the policies, actions, and affairs of internetworking protocol development are managed — so that we can begin to try to understand how the Internet poses an existential threat to sovereign nation-states and how it weakens and degrades the "system of social control under which the right to make laws and the right to enforce them, is vested in a particular group in society". We need to try to understand who is supposedly ‘in charge’ of the Internet and what it is they are ‘in charge’ of, before we can actually understand who is actually in control.
 
-### Protocol Governance: From Within
+## Protocol Governance: From Within
 
 The Internet protocol suite — the layered nest of protocols that we have examined over the last 9 chapters, from TCP/IP to DNS to BGP to HTTP and HTTPS — is watched over by several different groups in what is commonly referred to in academic literature as a multi-stakeholder governance model. These groups are the bodies 'that govern from within' — the actors that are part of the internal process of protocol management. They are, in no particular order:
 
@@ -1034,7 +963,7 @@ The Internet protocol suite — the layered nest of protocols that we have exami
 >
 > In more technical terms, the Internet Corporation for Assigned Names and Numbers (ICANN) helps coordinate the Internet Assigned Numbers Authority (IANA) functions, which are key technical services critical to the continued operations of the Internet's underlying address book, the Domain Name System (DNS)). The IANA functions include: (1) the coordination of the assignment of technical protocol parameters including the management of the address and routing parameter area (ARPA) top-level domain; (2) the administration of certain responsibilities associated with Internet DNS root zone management such as generic (gTLD) and country code (ccTLD) Top-Level Domains; (3) the allocation of Internet numbering resources; and (4) other services.
 >
-> -- ‘What Does ICANN Do?’, Retrieved from https://www.icann.org/resources/pages/welcome-2012-02-25-en [2]
+> -- ‘What Does ICANN Do?’, Retrieved from [https://www.icann.org/resources/pages/welcome-2012-02-25-en](https://www.icann.org/resources/pages/welcome-2012-02-25-en) [2]
 
 **The ISOC, IAB and IETF** - The alphabet soup that oversees Internet resources and steers protocol development. The Internet Society (ISOC) oversees the Internet Architecture Board (IAB), which in turn oversees the Internet Engineering Task Force (IETF).
 
@@ -1044,7 +973,7 @@ The Internet protocol suite — the layered nest of protocols that we have exami
 >
 > The IETF’s mission is to develop, update, and maintain Internet and TCP/IP technologies. One of the key responsibilities of the IETF is to produce Request for Comments (RFC) documents, which are memoranda describing protocols, processes, and technologies for the Internet. The IETF consists of working groups (WGs), the primary mechanism for developing IETF specifications and guidelines. WGs are short term, and after the objectives of the group are met, the WG is terminated. The Internet Engineering Steering Group (IESG) is responsible for the technical management of the IETF and the Internet standards process.
 >
-> – ‘Internet Standard organizations’, retrieved from http://wiki.ciscolinux.co.uk/index.php/Internet_Standard_organizations [3]
+> – ‘Internet Standard organizations’, retrieved from [http://wiki.ciscolinux.co.uk/index.php/Internet_Standard_organizations](http://wiki.ciscolinux.co.uk/index.php/Internet_Standard_organizations) [3]
 
 **The W3C:**
 The prominent role of the World Wide Web in the average Internet user's experience has meant that the World Wide Web Consortium, or W3C for short, plays an outsize role in setting Web standards [4]. While the IETF is charged with coordinating working groups and publishing RFCs for the HTTP protocol, the W3C liaises with them as a sister organization.
@@ -1054,18 +983,21 @@ ICANN, ISOC, and the W3C are collectively responsible for the administration and
 The overlay networks we have explored — Tor, BitTorrent and Bitcoin — each have their own unique internal process for proposing modifications and changes. As each overlay network started with an initial software artifact with specifications codified after release, their governance processes — to the extent that there is one — is an ad hoc, ex post facto jumble of 'the best laid plans of mice and men.'
 
 **Tor:**
+
 > ...to make a change to the Tor protocol, you write up a little design document, and send it to the tor-dev mailing list. Once it meets editorial quality, it can go into the proposals repository. Once it's implemented, it can be merged into the spec.
 >
-> – ‘Tor design proposals’, Retrieved from https://blog.torproject.org/tor-design-proposals-how-we-make-changes-our-protocol/ [5]
+> – ‘Tor design proposals’, Retrieved from [https://blog.torproject.org/tor-design-proposals-how-we-make-changes-our-protocol/](https://blog.torproject.org/tor-design-proposals-how-we-make-changes-our-protocol/) [5]
 
 **BitTorrent:**
+
 > The BitTorrent Community Forum coordinates the development of the BitTorrent protocol suite and its reference implementation. It is the wish of Bram Cohen that the BitTorrent mainline python implementation remain open source and that the protocol development process be modelled after the Python Enhancement Proposal (PEP) process.
 >
 > When a new proposal is submitted, one of the BitTorrent.org editors assigns a BEP number and updates the BitTorrent Enhancement Proposal index appropriately. Each document has a number that never changes and the history of the document is maintained in git.
 >
-> -- ‘Index of BitTorrent Enhancement Proposals’, Retrieved from https://www.bittorrent.org/beps/bep_0000.html [6]
+> -- ‘Index of BitTorrent Enhancement Proposals’, Retrieved from [https://www.bittorrent.org/beps/bep_0000.html](https://www.bittorrent.org/beps/bep_0000.html) [6]
 
 **Bitcoin:**
+
 > Bitcoin governance is the process by which a set of transaction and block verification rules are decided upon, implemented, and enforced, such that individuals adopt these rules for verifying that payments they received in transactions and blocks fit their subjective definition of “Bitcoin”. If two or more individuals adopt the same set validation of rules, they form an inter-subjective social consensus of what “Bitcoin” is.
 >
 > The process of updating or changing these rules to address bugs or implement new features begins with research leading to implementation proposals by developers. Community consensus is crucial; contentious proposals may not be integrated into the main codebase. That said, developers can fork the Bitcoin codebase to bypass consensus, as seen in BIP-148 during the Blocksize War.
@@ -1074,9 +1006,9 @@ The overlay networks we have explored — Tor, BitTorrent and Bitcoin — each h
 >
 > Rules are enforced by individual nodes verifying transactions and blocks, rejecting and banning peers that submit invalid transactions.
 >
-> -- Rochard, P. ‘Bitcoin Governance’ Retrieved from https://pierre-rochard.medium.com/bitcoin-governance-37e86299470f [7]
+> -- Rochard, P. ‘Bitcoin Governance’ Retrieved from [https://pierre-rochard.medium.com/bitcoin-governance-37e86299470f](https://pierre-rochard.medium.com/bitcoin-governance-37e86299470f) [7]
 
-### Protocol Governance: From Without
+## Protocol Governance: From Without
 
 So much for how protocols are governed from within. To understand how protocols are governed from without — that is, how actors outside the formal governance process attempt to influence and control the development and operation of network protocols — we will revisit David Clark's words quoted in Chapter 2, describing the tussle [8]:
 
@@ -1092,7 +1024,7 @@ If we observe that the state has used and is using all of its capabilities to ex
 
 > ...an international network of computers and computer networks connected to each other, sharing a common name and address space —[that] differs from earlier advances in information technologies because it combines global reach with extremely low barriers to entry. Governments have far more difficulty imposing border controls on the Internet because it relies on packet switching rather than circuit switching. The difficulty in imposing border controls on Internet communications is compounded by the low barriers to entry-anyone with a laptop computer, access to an Internet service provider, and appropriate software can publish and read in cyberspace. The Internet relies on already existing physical communication infrastructures, making it unnecessary to expend huge amounts of money to communicate globally. The ease with which people can participate in cyberspace activities enabled the Internet to grow exponentially with virtually no governmental oversight. This growth has created a cyber-culture that celebrates freedom and distrusts traditional political institutions trying to come to grips with the implications of this profound electronic revolution in information technology. No such transnational culture developed in the early days of the telegraph, radio, or television. Cybernauts most closely resemble medieval merchants who developed substantive rules and practices to regulate transnational trade — the lex mercatoria — outside traditional political institutions. Commentators have seen in the Internet a threat to sovereignty because the Internet challenges the three historic functions of the state: providing national security, regulating economic activities, and protecting and promoting civic and moral values." In short, the Internet threatens the government's ability to control power, wealth, and morals within its territory.
 >
-> -- Perrit, Henry H. *The Internet as a Threat to Sovereignty? Thoughts on the Internet's Role in Strengthening National and Global Governance* [10]
+> -- Perrit, Henry H. _The Internet as a Threat to Sovereignty? Thoughts on the Internet's Role in Strengthening National and Global Governance_ [10]
 
 By serving as a shared lingua franca for users across the Internet to communicate with, network protocols can connect the entire globe into one shared, sprawling 'contact zone'— an arena where radically different cultures and ideas come into contact with each other. Mary Louise Pratt's 1991 lecture, 'Arts of the Contact Zone' [11], describes how shared languages shape and codify communities:
 
@@ -1100,9 +1032,9 @@ By serving as a shared lingua franca for users across the Internet to communicat
 >
 > In keeping with autonomous, fraternal models of community, analyses of language use commonly assume that principles of cooperation and shared understanding are normally in effect. Descriptions of interactions between people in conversation, classrooms, medical and bureaucratic settings, readily take it for granted that the situation is governed by a single set of rules or norms shared by all participants. The analysis focuses then on how those rules produce or fail to produce an orderly, coherent exchange. Models involving games and moves are often used to describe interactions. Despite whatever conflicts or systematic social differences might be in play, it is assumed that all participants are engaged in the same game and that the game is the same for all players. Often it is. But of course it often is not, as, for example, when speakers are from different classes or cultures, or one party is exercising authority and another is submitting to it or questioning it.
 >
-> – Pratt, Mary Louise. *Arts Of The Contact Zone* [11]
+> – Pratt, Mary Louise. _Arts Of The Contact Zone_ [11]
 
-This is the crux of how the Internet supercedes the role of the nation-state. The implicit agreement of its users on a set of shared rules implementing the means and methods of global communication, allows them to subvert intermediaries or become intermediaries themselves without the intercession of any state or government. By entering this massive, shared contact zone and leaving 'meatspace' behind, users bridge the distance between disparate jurisdictions, casting off the cultural mores and legal bindings of the physical world to join together in a single virtual 'crowd.' Canetti, in *Crowds and Power*, wrote that:
+This is the crux of how the Internet supercedes the role of the nation-state. The implicit agreement of its users on a set of shared rules implementing the means and methods of global communication, allows them to subvert intermediaries or become intermediaries themselves without the intercession of any state or government. By entering this massive, shared contact zone and leaving 'meatspace' behind, users bridge the distance between disparate jurisdictions, casting off the cultural mores and legal bindings of the physical world to join together in a single virtual 'crowd.' Canetti, in _Crowds and Power_, wrote that:
 
 > Only together can men free themselves from their burdens of distance; and this, precisely, is what happens in a crowd. During the discharge distinctions are thrown off and all feel equal. In that density, where there is scarcely any space between, and body presses against body, each man is as near the other as he is to himself; and an immense feeling of relief ensues. It is for the sake of this blessed moment, when no-one IS greater or better than another, that people become a crowd...
 >
@@ -1110,13 +1042,13 @@ This is the crux of how the Internet supercedes the role of the nation-state. Th
 >
 > The closed crowds of the past, of which more will be heard later, had turned into familiar institutions. The peculiar state of mind characteristic of their members seemed somewhat natural. They always met for a special purpose of a religious, festal or martial kind ; and this purpose seemed to sanctify their state. A man attending a sermon honestly believed that it was the sermon which mattered to him, and he would have felt astonished or even indignant had it been explained to him that the large number of listeners present gave him more satisfaction than the sermon itself All ceremonies and rules pertaining to such institutions are basically intent on capturing the crowd; they prefer a church-full secure to the whole world insecure. The regularity of church-going and the precise and familiar repetition of certain rites safeguard for the crowd something like a domesticated experience of itself These performances and their recurrence at fixed times supplant needs for something harsher and more violent. Such institutions might have proved adequate if the number of human beings had remained the same, but more and more people filled the towns and the accelerating increase in the growth of populations during the last few centuries continually provided fresh incitements to the formation of new and larger crowds. And nothing, not even the most experienced and subtle leadership, could have prevented them forming in such conditions.
 >
-> – Canetti, *Crowds and Power* [12]
+> – Canetti, _Crowds and Power_ [12]
 
 A single teeming crowd of billions of users is effectively a supranational entity. Any individual may be subject to the rules and regulations of a state, or bound to follow and obey the social and cultural mores they were born into. Ten of them may come together, located in different physical locations and legal jurisdictions, to agree on a new set of shared rules for commerce and communication; in doing so, they become something akin to a social club. Ten thousand become something closer to a tribe; ten million, a nation. With 5 billion active Internet users as of January 2024 and an average time spent online approaching 7 hours a day, an entirely new entity has come into being: an always-connected, teeming mass of living information, whose only shared bonds are their agreement to run the TCP/IP suite of software and the applications built on top of it. A single institution or set of institutions — state or otherwise — has no hope of imposing its will on this mass; it must expend all of its energy to work through the crowd, targeting chokepoints and intermediaries, filtering and blocking information and commerce, erecting its own chokepoints, and injecting its own information and knowledge in order to simply survive.
 
 In an effort to better understand how conflicts between the diverse set of actors that makes up this teeming crowd – states, users, and Internet governance bodies — may play out in practice, we will now examine two episodes in the history of the Internet where users, Internet governing bodies and nation states have found themselves at odds. There is no final end state for conflicts such as these; each one leads to a new opening position for the next conflict to build upon. We will turn our attention first to the redirection of the Internet root name servers by Jon Postel in 1998, before moving on to the reaction of Internet companies and their customers to the attempted passage of the Stop Online Piracy Act (SOPA) and the PROTECT IP Act (PIPA) in 2012.
 
-### The Root Name Server Redirection Test
+## The Root Name Server Redirection Test
 
 Recall from Chapter 4 that one of the original goals of the domain name system (DNS) was to remove the central point of control of management of names. From the inception of the DNS in 1983 until one day in late January of 1998, this goal appeared to have been theoretically achieved. It took fifteen years to discover the difference between theory and practice.
 
@@ -1144,7 +1076,7 @@ The result of their deliberations was the release of the "Green Paper" in Januar
 
 > The Green Paper remains noteworthy, however, for its account of why DoC felt it had the power to make rules about the DNS at all, given the absence of direct congressional authorization. The Green Paper listed five sources of DoC’s statutory authority for this proposed rulemaking: (1) the general mission statement of DoC for the promotion of U.S. commerce; (2) DoC’s National Telecommunications and Information Administration’s (NTIA) power to coordinate telecommunications activities and assist in the formation of policies; (3) NTIA’s authority to “develop and set forth telecommunications policies”; 180 (4) NTIA’s power to conduct studies and make recommendations; and (5) NTIA’s authority to “issue such regulations as may be necessary to carry out” its functions.
 >
-> -- Froomkin, *Wrong Turn In CyberSpace* [14]
+> -- Froomkin, _Wrong Turn In CyberSpace_ [14]
 
 Two days before the Green Paper was officially released, Dr. Postel — who almost assuredly would have had some inkling about the contents of the document — sent the following email to root name server operators:
 
@@ -1159,7 +1091,7 @@ Was the test a preliminary shot across the bow to warn the U.S. government and I
 
 > The White Paper did not speak precisely to how the new corporation it described would be formed. It suggested that if the new entity were formed by “private sector Internet stakeholders,” the U.S. government was prepared to recognize it by entering into agreements with it, seeking international support for it, and ensuring that it had appropriate access to databases and software controlled by NSI. In October 1998, after a series of negotiations between IANA and NSI — and more wide-ranging consultations on the interim board’s composition with the U.S. government, a variety of foreign governments, Jon Postel’s lawyer (a Jones, Day partner named Joe Sims), IBM, and others — Dr. Postel transmitted to the Department of Commerce documents reflecting what he described as “the consensus judgment of the global Internet community as to how to form a corporation that will include the IANA function.” Those documents included the articles of incorporation of the new entity, which had already been incorporated in California as the Internet Corporation for Assigned Names and Numbers, or ICANN, biographies of its initial board of directors, and a set of proposed bylaws.
 >
-> – Weinberg, Jonathan. *ICANN And The Problem Of Legitimacy* [16]
+> – Weinberg, Jonathan. _ICANN And The Problem Of Legitimacy_ [16]
 
 A mere two weeks after these documents were transmitted, Dr. Jon Postel passed away from complications of open heart surgery at the age of 55. The Internet had lost its assigned numbers authority.
 
@@ -1175,7 +1107,7 @@ In his absence, Jon's lawyer worked to ensure that ICANN was brought online exac
 
 The root server redirection test is the perfect example of the sort of brinksmanship that can occur between government officials that presume themselves to be somehow 'in control' of the core functionality of the Internet and the operators that are actually charged with managing the underlying infrastructure. The common vulgar idiom "Money talks, bullshit walks" is meant to convey the idea that "attempting to accomplish a goal by demonstrating possession of material resources will succeed, while attempting to accomplish the same goal through mere rhetoric will fail." In this case, when push came to shove, Dr. Postel's actions made it clear that when protocol participants talk, government bullshit has no choice but to walk.
 
-### The SOPA and PIPA Blackout
+## The SOPA and PIPA Blackout
 
 Imagine that you are a global hegemonic power, intent on coercing sovereign nations into obeying your every wish and command. You have carrots in the form of money and resources, and sticks in the form of troops and armaments. With these tools you should be able to impose your will upon any actor you wish, as long as you have the most carrots and the most sticks — that is, unless you somehow find yourself on some new terra incognita, one where your carrots aren't the recognized coin of the land and your sticks can't quite reach as far as they do back home. From the point of view of the State, the Internet was (and in many ways still is) exactly such a place. Compelling online entities in foreign jurisdictions to obey the will of the hegemon is an exercise in futility, and often an unnecessary one; better to go after physical, tangible chokepoints in local or friendly jurisdictions and avoid the unexplored intangible terrain altogether.
 
@@ -1185,7 +1117,7 @@ Unable to target these websites directly, authorities would instead be empowered
 
 Supporters of SOPA and PIPA included the Motion Picture Association of America, the Recording Industry Association of America, and the U.S. Chamber of Commerce, amongst other groups. They had supported a previous bill known as COICA, the Combating Online Infringement and Counterfeits Act, which had been introduced in 2010 and passed the Senate Judiciary Committee unopposed but never made it to a vote on the Senate floor due to strenuous opposition. COICA was rewritten the following year to become PIPA; SOPA was the House's version of PIPA, introduced six months after PIPA made it to the Senate floor.
 
-The time spent on rewriting and drafting the newer versions of these bills allowed opponents of the bills to plan out and mount an effective campaign against them. Shortly after the first markup hearing by the House Judiciary Committee for SOPA, on November 16, 2011, prominent website operators – most notably Tumblr and Reddit — began displaying prominently placed black banners with the words 'STOP CENSORSHIP', informing their users of the dangers of the legislation and imploring them to contact their local representatives to speak out against the bills. The web site https://americancensorship.org was set up by a group of interested third parties, including the Electronic Frontier Foundation, the Free Software Foundation, the Foundation for Participatory Politics, and Mozilla. It served as a focal point for website operators interested in participating in the protests; it provided descriptions of the chilling effects that SOPA and PIPA were expected to have on free speech on the Internet, provided instructions to website operators on how to join the protests and add 'censored' logos to their sites, and displayed statistics tracking how many members of Congress had been emailed or received phone calls from Internet users voicing their concerns.
+The time spent on rewriting and drafting the newer versions of these bills allowed opponents of the bills to plan out and mount an effective campaign against them. Shortly after the first markup hearing by the House Judiciary Committee for SOPA, on November 16, 2011, prominent website operators – most notably Tumblr and Reddit — began displaying prominently placed black banners with the words 'STOP CENSORSHIP', informing their users of the dangers of the legislation and imploring them to contact their local representatives to speak out against the bills. The web site [https://americancensorship.org](https://americancensorship.org) was set up by a group of interested third parties, including the Electronic Frontier Foundation, the Free Software Foundation, the Foundation for Participatory Politics, and Mozilla. It served as a focal point for website operators interested in participating in the protests; it provided descriptions of the chilling effects that SOPA and PIPA were expected to have on free speech on the Internet, provided instructions to website operators on how to join the protests and add 'censored' logos to their sites, and displayed statistics tracking how many members of Congress had been emailed or received phone calls from Internet users voicing their concerns.
 
 In retrospect, what became known as 'American Censorship Day' was the first shot in the battle against SOPA and PIPA, and the element of surprise was instrumental in ensuring that the adversaries of the bill scored a resounding tactical victory. It's surprisingly easy to emerge from a conflict victorious when your opponent doesn't actually show up to battle. The lobbyists and lawmakers that supported the passage of SOPA and PIPA appeared to have made the tactical error of dismissing the masses of website operators rising against them as being of little consequence, and misunderstood the events of November 16 as being a self-contained event instead of an opening salvo. There were no follow-on actions planned after American Censorship Day, no future protests to thwart; perhaps the best tactic was to simply dismiss the events of November 16, allow time for the media firestorm to die down, and move forward with efforts to pass the legislation.
 
@@ -1203,17 +1135,17 @@ The overwhelming victory not only emboldened and encouraged the anti-SOPA crowd;
 
 > The impact of the coordinated action was generally considered to be significant. Yochai Benkler of the Berkman Center for Internet & Society stated that the January 18 blackout was "a very strong public demonstration to suggest that what historically was seen as a technical system of rules that only influences the content industry has become something more," further adding "You've got millions of citizens who care enough to act. That's not trivial." California House member Darrell Issa called the collective effort an unprecedented means for upsetting a backroom lobbying effort, and the immediate political efficacy of the widespread online protest was characterised in terms of a sleeping giant having awakened and of a new player being in town. One Silicon Valley lobbyist said the content industry had "a lot to learn," noting that they don't have grassroots support: "There are no Facebook pages to call your congressman to support PIPA and SOPA."[…]
 >
-> – Wikipedia, Retrieved from https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA [18]
+> – Wikipedia, Retrieved from [https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA](https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA) [18]
 
 > By one account, the shift in stated positions on SOPA/PIPA by members of Congress had gone overnight from 80 for and 31 against to 65 for and 101 against[...]
 >
 > In January 2022, Tiffany Cheng of Techdirt wrote that "The SOPA Blackout not only killed the bill in 2012, but shook Congress so profoundly that no significant copyright legislation has been introduced in the ten years since. Because the Blackout achieved so much progress against the political order in a matter of weeks, this moment in history rewrote what we collectively think is possible in the political realm; in particular among the political set, even though triumphs of this proportion remain elusive, and power is even more entrenched."
 >
-> – Wikipedia, Retrieved from https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA [18]
+> – Wikipedia, Retrieved from [https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA](https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA) [18]
 
 The rejection of SOPA and PIPA marked a watershed moment for Internet activists and the tussle between Internet users and those who wished to govern them. Large commercial interests, lobbyists and lawmakers were all vehemently in favor of the bills and treated their passage as almost a foregone conclusion. No single actor opposing the legislation — neither Wikipedia, nor Namecheap, nor Mozilla, nor the EFF — could have hoped to stand in the way of these interests; instead, it was a loosely coordinated crowd of Internet commenters egging each other on that was able to upend the existing political order, overwhelming their opponents with their collective strength. The proponents of the bills were effectively a static target; their opponents, a guerrilla army, harassing and retreating at will, inflicting a thousand cuts in a war of attrition, insisting that the protocols they had come to rely on be left alone.
 
-### What Is To Be Done
+## What Is To Be Done
 
 I have resisted until now the temptation of putting forth some sort of grand theory of protocols or suggesting a way forward from here. This text deals with protocol development, adoption, and implementation as historical facts, eschewing the theoretical. If your current experience of the Internet works well enough for you, my only suggestion is to keep at it. I believe I have made the case that the Internet comes with its own set of rules; that agreeing to these rules is voluntary, in the sense that no one is forcing you to browse the World Wide Web, but compulsory if you wish to communicate with others who are already following these rules; that if you find yourself in need of 'more'— in need of more knowledge to consume, in need of more freedom to communicate and disseminate speech, in need of more freedom to transact, to buy and sell — and find yourself blocked by some unseen intermediary, whether it be an authoritarian dictatorship or an unfeeling corporate monolith, then more is yours for the taking. You can use Tor to search for and consume content without a state-owned telecommunications provider blocking you; Bitcoin to engage in transactions outside of the state-sanctioned banking system; stand up your own website if you are banned from sharing prohibited information on macro-intermediary platforms like Instagram and Twitter, or store your data on your own personal server so that the likes of Netflix and Amazon can't delete your favorite television show out from underneath you. By the same token, if you wish to take on less responsibility — to consume only 'approved' content, engage in 'approved' commerce, post only 'approved' opinions, etc. in exchange for the convenience and benefits that comes with lesser responsibilities, you are certainly free to do that as well, allowing some other party to take on the burden of running, operating and understanding the software that enables you to do so, as long as you are willing to pay their asking price, which is subject to change at their whim, in the same way that a toll operator may raise the price for transiting a road whenever you choose to travel.
 
@@ -1225,8 +1157,7 @@ I find myself unable to imagine an Internet where encryption is ubiquitous and t
 
 The reason I find myself unable to imagine an Internet where these changes are adopted is the same reason that an Internet user in the 1990s would have been unable to imagine the Netflix or Facebook of today. To 'watch television on your computer' was possible back then; computer graphics cards were sold with television tuners and perfectly capable of displaying broadcast and cable television on the screen of a CRT. Social media, the idea of sharing and communicating the most mundane details of your life with others doing the same was also quite possible and happened frequently, but through endless 'chain emails' and in IRC chat rooms. I don't know what's in store for this latest iteration of the Internet superstructure we are lurching towards, one where a critical mass of users — perhaps not a majority, but certainly an intolerant minority — decide that end-to-end encryption and peer-to-peer overlay networks are projects worth investing their time and resources into. What I expect is that, once those users fill in these final chinks in the armor of the Internet protocol suite and remove the last locus of control, we will find the users in the middle of the tussle between those that govern the Internet and those whose governing is undone by the Internet will have upended the game board entirely. What comes next for the relationship between protocol and nation-state, between users opting into agreements that cannot be intercepted, filtered, or manipulated by outside actors, compared to our current online existence is difficult for me to imagine. My hope is that it will be, compared to what came before it – and forgive me for closing the text with its title!— something more profound.
 
-
-## Epilogue
+# Epilogue
 
 I'd like to thank my wife Ivelina, and my daughter Anara, for their patience, understanding and inspiration. This book is dedicated to them.
 
@@ -1240,118 +1171,114 @@ Special thanks to David Bowie for the title, prologue and parting words of this 
 
 Finally: the idea of 'investing in protocols' somehow came in vogue as I first started the work of researching this text. If you've read it in the hopes of gaining some insight in how to do so, I'm afraid you're out of luck. Not only do I not have any advice to offer in that regard, I am thoroughly convinced that any attempt to 'invest' in a protocol would be either doomed to failure or would lead to success only if by complete accident. I could have told you well before the demise of the walled garden information services like AOL and Prodigy that they were destined to be replaced by the Internet, TCP/IP and the World Wide Web — but for all the people that bought AOL stock at the bottom and sold it at the top, that would have been terrible guidance for an investment. (Little matter, anyway: most of the 'protocols' people seem to be 'investing' in are HTTPS in a funny hat.)
 
----
----
+# Bibliography
 
-## Bibliography
+## Prologue
 
-### Prologue:
+1.  Bowie, D. (1999). Interview with Jeremy Paxman. BBC Newsnight. Retrieved from [https://www.youtube.com/watch?v=FiK7s_0tGsg](https://www.youtube.com/watch?v=FiK7s_0tGsg)
+2.  Licklider, J. C. R. (1963). Memo to Members and Affiliates of the Intergalactic Computer Network. Retrieved from [https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network](https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network)
+3.  Cerf, V. as quoted in Jones, Steve (2003). _Encyclopedia of New Media: An Essential Reference to Communication and Technology_. 1st ed. Thousand Oaks, London, New Delhi: Sage Publications
 
-1.  Bowie, D. (1999). Interview with Jeremy Paxman. BBC Newsnight. Retrieved from https://www.youtube.com/watch?v=FiK7s_0tGsg
-2.  Licklider, J. C. R. (1963). Memo to Members and Affiliates of the Intergalactic Computer Network. Retrieved from https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network
-3.  Cerf, V. as quoted in Jones, Steve (2003). *Encyclopedia of New Media: An Essential Reference to Communication and Technology*. 1st ed. Thousand Oaks, London, New Delhi: Sage Publications
+## Chapter 1
 
-### Chapter 1:
-
-1.  Baran, P. (1962). On Distributed Communication Networks. Retrieved from https://www.rand.org/content/dam/rand/pubs/papers/2005/P2626.pdf
-2.  Licklider, J. C. R. (1963). Memo to Members and Affiliates of the Intergalactic Computer Network. Retrieved from https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network
-3.  Abbate, J. (1999). *Inventing the Internet*. Cambridge, MA: MIT Press. (pp. 48-49).
-4.  Dickson, P. A. (1968). ARPA network will represent integration on a large scale. *Electronics, 30*, (pp. 131-134).
+1.  Baran, P. (1962). On Distributed Communication Networks. Retrieved from [https://www.rand.org/content/dam/rand/pubs/papers/2005/P2626.pdf](https://www.rand.org/content/dam/rand/pubs/papers/2005/P2626.pdf)
+2.  Licklider, J. C. R. (1963). Memo to Members and Affiliates of the Intergalactic Computer Network. Retrieved from [https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network](https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network)
+3.  Abbate, J. (1999). _Inventing the Internet_. Cambridge, MA: MIT Press. (pp. 48-49).
+4.  Dickson, P. A. (1968). ARPA network will represent integration on a large scale. _Electronics, 30_, (pp. 131-134).
 5.  Scantlebury, R., & Bartlett, K. (1967). A Protocol for Use in the NPL Data Communications Network.
-6.  Roberts, L. G. (1967, January). Multiple computer networks and intercomputer communication. In *Proceedings of the first ACM symposium on Operating System Principles* (pp. 3-1).
-7.  Postel, J. & Reynolds, J. (1987). RFC 1000: The Request For Comments Reference Guide. Request for Comments. https://www.rfc-editor.org/rfc/rfc1000.txt
-8.  Naughton, J. (2015). *A brief history of the future*. Weidenfeld & Nicolson.
-9.  Hauben, M., & Hauben, R. (1997). *Netizens: On the history and impact of Usenet and the Internet*. IEEE Computer Society Press.
+6.  Roberts, L. G. (1967, January). Multiple computer networks and intercomputer communication. In _Proceedings of the first ACM symposium on Operating System Principles_ (pp. 3-1).
+7.  Postel, J. & Reynolds, J. (1987). RFC 1000: The Request For Comments Reference Guide. Request for Comments. [https://www.rfc-editor.org/rfc/rfc1000.txt](https://www.rfc-editor.org/rfc/rfc1000.txt)
+8.  Naughton, J. (2015). _A brief history of the future_. Weidenfeld & Nicolson.
+9.  Hauben, M., & Hauben, R. (1997). _Netizens: On the history and impact of Usenet and the Internet_. IEEE Computer Society Press.
 
-### Chapter 2:
+## Chapter 2
 
-1.  Russell, A. L. (2014). *Open standards and the digital age*. Cambridge University Press.
-2.  Systems Network Architecture (2024, March 1st). In *Wikipedia*. https://en.wikipedia.org/wiki/Systems_Network_Architecture
-3.  Shapiro, C., & Varian, H. R. (1999). *Information rules: A strategic guide to the network economy*. Harvard Business Press.
-4.  Varian, H. R., Farrell, J., & Shapiro, C. (2004). *The economics of information technology: An introduction*. Cambridge University Press.
-5.  Clark, D. D., Wroclawski, J., Sollins, K. R., & Braden, R. (2005). Tussle in cyberspace: defining tomorrow's internet. *IEEE/ACM transactions on networking, 13(3)*, 462-475.
-6.  Day, J. (2007). *Patterns In Network Architecture*. Pearson Education India.
+1.  Russell, A. L. (2014). _Open standards and the digital age_. Cambridge University Press.
+2.  Systems Network Architecture (2024, March 1st). In _Wikipedia_. [https://en.wikipedia.org/wiki/Systems_Network_Architecture](https://en.wikipedia.org/wiki/Systems_Network_Architecture)
+3.  Shapiro, C., & Varian, H. R. (1999). _Information rules: A strategic guide to the network economy_. Harvard Business Press.
+4.  Varian, H. R., Farrell, J., & Shapiro, C. (2004). _The economics of information technology: An introduction_. Cambridge University Press.
+5.  Clark, D. D., Wroclawski, J., Sollins, K. R., & Braden, R. (2005). Tussle in cyberspace: defining tomorrow's internet. _IEEE/ACM transactions on networking, 13(3)_, 462-475.
+6.  Day, J. (2007). _Patterns In Network Architecture_. Pearson Education India.
 
-### Chapter 3:
+## Chapter 3
 
-1.  Russell, A. L. (2014). *Open standards and the digital age*. Cambridge University Press.
-2.  Callon, R. (1991). RFC 1273: The Recommendation for the IP Next Generation Protocol. Request for Comments. https://www.rfc-editor.org/rfc/rfc1273.txt
-3.  Chapin, L., as quoted in Messmer, E. (1992). Internet Architect Gives Long-Term View. *Network World*, (pp. 9).
-4.  Clark, D. (1992). *A Cloudy Crystal Ball -- Visions of the Future*. Retrieved on 2024-05-13. (Presentation given at the 24th Internet Engineering Task Force Meeting.)
-5.  Kuerbis, B., & Mueller, M. (2020). The hidden standards war: economic factors affecting IPv6 deployment. *Digital Policy, Regulation and Governance, 22(4)*, 333-361.
+1.  Russell, A. L. (2014). _Open standards and the digital age_. Cambridge University Press.
+2.  Callon, R. (1991). RFC 1273: The Recommendation for the IP Next Generation Protocol. Request for Comments. [https://www.rfc-editor.org/rfc/rfc1273.txt](https://www.rfc-editor.org/rfc/rfc1273.txt)
+3.  Chapin, L., as quoted in Messmer, E. (1992). Internet Architect Gives Long-Term View. _Network World_, (pp. 9).
+4.  Clark, D. (1992). _A Cloudy Crystal Ball -- Visions of the Future_. Retrieved on 2024-05-13. (Presentation given at the 24th Internet Engineering Task Force Meeting.)
+5.  Kuerbis, B., & Mueller, M. (2020). The hidden standards war: economic factors affecting IPv6 deployment. _Digital Policy, Regulation and Governance, 22(4)_, 333-361.
 
-### Chapter 4:
+## Chapter 4
 
-1.  Shoch, J. F. (1978). "A Note on Inter-Network Naming, Addressing, and Routing." *Computer Networks, 2(3)*, 243-247.
-2.  Mockapetris, P. V. (November 1983). "RFC 882: Domain Names - Concepts and Facilities." Request for Comments. https://www.rfc-editor.org/rfc/rfc882.txt
-3.  Larson, M., & Liu, C. (2001). *DNS on Windows 2000*. O'Reilly Media, Inc. [Excerpt on HOSTS.TXT challenges]. Retrieved from https://www.oreilly.com/library/view/dns-on-windows/0596005628/ch01s02s01.html
-4.  Mockapetris, P., & Dunlap, K. J. (1988, August). Development of the domain name system. In *Symposium proceedings on Communications architectures and protocols* (pp. 123-133).
-5.  Schelling, T. C. (1958). "The Strategy of Conflict Prospectus for a Reorientation of Game Theory." *Journal of Conflict Resolution, 2(3)*, 203-260.
-6.  Vixie, P. (October 2019). "The DNS Wars: Episode IV - A New Hope." Presentation at NANOG 77. https://pc.nanog.org/static/published/meetings/NANOG77/2033/20191028_Vixie_Keynote_Dns_Wars__v1.pdf
-7.  Szabo, N. (1998). "Secure Property Titles with Owner Authority." Retrieved from https://nakamotoinstitute.org/secure-property-titles/
-8.  Collier, K. (May 19, 2015). "The Pirate Bay lives on despite Swedish Domain Seizure." *The Daily Dot*. Retrieved from https://www.dailydot.com/debug/the-pirate-bay-domain-sweden-seized/
+1.  Shoch, J. F. (1978). "A Note on Inter-Network Naming, Addressing, and Routing." _Computer Networks, 2(3)_, 243-247.
+2.  Mockapetris, P. V. (November 1983). "RFC 882: Domain Names - Concepts and Facilities." Request for Comments. [https://www.rfc-editor.org/rfc/rfc882.txt](https://www.rfc-editor.org/rfc/rfc882.txt)
+3.  Larson, M., & Liu, C. (2001). _DNS on Windows 2000_. O'Reilly Media, Inc. [Excerpt on HOSTS.TXT challenges]. Retrieved from [https://www.oreilly.com/library/view/dns-on-windows/0596005628/ch01s02s01.html](https://www.oreilly.com/library/view/dns-on-windows/0596005628/ch01s02s01.html)
+4.  Mockapetris, P., & Dunlap, K. J. (1988, August). Development of the domain name system. In _Symposium proceedings on Communications architectures and protocols_ (pp. 123-133).
+5.  Schelling, T. C. (1958). "The Strategy of Conflict Prospectus for a Reorientation of Game Theory." _Journal of Conflict Resolution, 2(3)_, 203-260.
+6.  Vixie, P. (October 2019). "The DNS Wars: Episode IV - A New Hope." Presentation at NANOG 77. [https://pc.nanog.org/static/published/meetings/NANOG77/2033/20191028_Vixie_Keynote_Dns_Wars\_\_v1.pdf](https://pc.nanog.org/static/published/meetings/NANOG77/2033/20191028_Vixie_Keynote_Dns_Wars__v1.pdf)
+7.  Szabo, N. (1998). "Secure Property Titles with Owner Authority." Retrieved from [https://nakamotoinstitute.org/secure-property-titles/](https://nakamotoinstitute.org/library/secure-property-titles/)
+8.  Collier, K. (May 19, 2015). "The Pirate Bay lives on despite Swedish Domain Seizure." _The Daily Dot_. Retrieved from [https://www.dailydot.com/debug/the-pirate-bay-domain-sweden-seized/](https://www.dailydot.com/debug/the-pirate-bay-domain-sweden-seized/)
 
-### Chapter 5:
+## Chapter 5
 
-1.  Postel, J. (September 1981). "RFC 823: The DARPA Internet Gateway." Request for Comments. https://www.rfc-editor.org/rfc/rfc823.txt
-2.  Seamonson, L., & Rosen, E. (April 1984). "RFC 904: Exterior Gateway Protocol Formal Specification." Request for Comments. https://www.rfc-editor.org/rfc/rfc904.txt
-3.  Van Beijnum, I. (June 2009?). "GGP, EGP and 25 years of BGP: a brief history of internet routing". Retrieved from https://www.routerfreak.com/ggp-egp-and-25-years-of-bgp-a-brief-history-of-internet-routing/
-4.  Kesan, J. P., & Shah, R. C. (2001). "Fool Us Once Shame on You — Fool Us Twice Shame on Us: What We Can Learn from the Privatizations of the Internet Backbone Network and the Domain Name System." *Washington University Journal of Law & Policy, 7*, 55-108. Retrieved from https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1399&context=law_lawreview
-5.  Clark, D. D. (2018). *Designing an Internet*. MIT Press.
-6.  Knieps, G. (2015). *Network Economics*. Heidelberg, Springer.
+1.  Postel, J. (September 1981). "RFC 823: The DARPA Internet Gateway." Request for Comments. [https://www.rfc-editor.org/rfc/rfc823.txt](https://www.rfc-editor.org/rfc/rfc823.txt)
+2.  Seamonson, L., & Rosen, E. (April 1984). "RFC 904: Exterior Gateway Protocol Formal Specification." Request for Comments. [https://www.rfc-editor.org/rfc/rfc904.txt](https://www.rfc-editor.org/rfc/rfc904.txt)
+3.  Van Beijnum, I. (June 2009?). "GGP, EGP and 25 years of BGP: a brief history of internet routing". Retrieved from [https://www.routerfreak.com/ggp-egp-and-25-years-of-bgp-a-brief-history-of-internet-routing/](https://www.routerfreak.com/ggp-egp-and-25-years-of-bgp-a-brief-history-of-internet-routing/)
+4.  Kesan, J. P., & Shah, R. C. (2001). "Fool Us Once Shame on You — Fool Us Twice Shame on Us: What We Can Learn from the Privatizations of the Internet Backbone Network and the Domain Name System." _Washington University Journal of Law & Policy, 7_, 55-108. Retrieved from [https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1399&context=law_lawreview](https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1399&context=law_lawreview)
+5.  Clark, D. D. (2018). _Designing an Internet_. MIT Press.
+6.  Knieps, G. (2015). _Network Economics_. Heidelberg, Springer.
 7.  McQuistin, S., and Perkins, C. (2015) Reinterpreting the transport protocol stack to embrace ossification. In: IAB Workshop on Stack Evolution in a Middlebox Internet (SEMI), Zurich, Switzerland, 26-27 Jan 2015.
-8.  Handley, M. (2014). "Why The Internet Only Just Works." *BT Technology Journal, 22(3)*, 119-129. https://link.springer.com/article/10.1023/B:BTTJ.0000047600.71482.fb
+8.  Handley, M. (2014). "Why The Internet Only Just Works." _BT Technology Journal, 22(3)_, 119-129. [https://link.springer.com/article/10.1023/B:BTTJ.0000047600.71482.fb](https://link.springer.com/article/10.1023/B:BTTJ.0000047600.71482.fb)
 
-### Chapter 6:
+## Chapter 6
 
-1.  Usenet (2024, March 1st). In *Wikipedia*. https://en.wikipedia.org/wiki/Usenet
-2.  PCMag Staff . (2008, July 31st). "R.I.P Usenet: 1980-2008." *PCMag*. Retrieved from https://www.pcmag.com/archive/rip-usenet-1980-2008-230383
-3.  Alberti, B. (2011). "Internet Gopher: A Bridge To The Web." *MinnPost*. Retrieved from https://www.minnpost.com/business/2016/08/rise-and-fall-gopher-protocol/ (Note: URL date is 2016, text is 2011 - this matches your doc)
-4.  Gihring, T. (2016). "The rise and fall of the Gopher protocol." *Internet Archive*. https://archive.org/details/internet_gopher_bridge_to_the_web/page/n1/mode/2up
-5.  Frana, P. (2001). "An Interview With Mark McCahill." Oral History Software History Project of the National Science Foundation. Retrieved from https://conservancy.umn.edu/server/api/core/bitstreams/cf1361cf-b684-410b-8a0e-5841c27ae159/content
-6.  Lee, C. (1999). "Where Have all the Gophers Gone? Why the Web beat Gopher in the Battle for Protocol Mind Share." University Of Michigan. Retreived from https://ils.unc.edu/callee/gopherpaper.htm
-7.  Lopp, J. (2015). "The Death of Decentralized Email." *Lopp.net*. Retrieved from https://blog.lopp.net/death-of-decentralized-email/
+1.  Usenet (2024, March 1st). In _Wikipedia_. [https://en.wikipedia.org/wiki/Usenet](https://en.wikipedia.org/wiki/Usenet)
+2.  PCMag Staff . (2008, July 31st). "R.I.P Usenet: 1980-2008." _PCMag_. Retrieved from [https://www.pcmag.com/archive/rip-usenet-1980-2008-230383](https://www.pcmag.com/archive/rip-usenet-1980-2008-230383)
+3.  Alberti, B. (2011). "Internet Gopher: A Bridge To The Web." _MinnPost_. Retrieved from [https://www.minnpost.com/business/2016/08/rise-and-fall-gopher-protocol/](https://www.minnpost.com/business/2016/08/rise-and-fall-gopher-protocol/) (Note: URL date is 2016, text is 2011 - this matches your doc)
+4.  Gihring, T. (2016). "The rise and fall of the Gopher protocol." _Internet Archive_. [https://archive.org/details/internet_gopher_bridge_to_the_web/page/n1/mode/2up](https://archive.org/details/internet_gopher_bridge_to_the_web/page/n1/mode/2up)
+5.  Frana, P. (2001). "An Interview With Mark McCahill." Oral History Software History Project of the National Science Foundation. Retrieved from [https://conservancy.umn.edu/server/api/core/bitstreams/cf1361cf-b684-410b-8a0e-5841c27ae159/content](https://conservancy.umn.edu/server/api/core/bitstreams/cf1361cf-b684-410b-8a0e-5841c27ae159/content)
+6.  Lee, C. (1999). "Where Have all the Gophers Gone? Why the Web beat Gopher in the Battle for Protocol Mind Share." University Of Michigan. Retreived from [https://ils.unc.edu/callee/gopherpaper.htm](https://ils.unc.edu/callee/gopherpaper.htm)
+7.  Lopp, J. (2015). "The Death of Decentralized Email." _Lopp.net_. Retrieved from [https://blog.lopp.net/death-of-decentralized-email/](https://blog.lopp.net/death-of-decentralized-email/)
 
-### Chapter 7:
+## Chapter 7
 
-1.  Berners-Lee, T. (1989). Information Management: A Proposal. CERN. Retrieved from http://cds.cern.ch/record/369245/files/dd-89-001.pdf
-2.  Bory, P. (2020). *The internet myth: From the internet imaginary to network ideologies* (p. 169). University of Westminster Press.
-3.  Tusikov, N. (2017). *Chokepoints: Global private regulation on the Internet*. Univ of California Press.
-4.  Deleuze, G. (1992). Postscript on the Societies of Control. *October, 59*, 3-7.
-5.  Dixon-Román, E. (2020). Control Societies @ 30: Technopolitical Forces and Ontologies of Difference. *Social Text Journal*.
-6.  Google. (March 2024). HTTPS Encryption on the Web. *Google Transparency Report*. Retrieved from https://transparencyreport.google.com/https/overview?hl=en
+1.  Berners-Lee, T. (1989). Information Management: A Proposal. CERN. Retrieved from [http://cds.cern.ch/record/369245/files/dd-89-001.pdf](http://cds.cern.ch/record/369245/files/dd-89-001.pdf)
+2.  Bory, P. (2020). _The internet myth: From the internet imaginary to network ideologies_ (p. 169). University of Westminster Press.
+3.  Tusikov, N. (2017). _Chokepoints: Global private regulation on the Internet_. Univ of California Press.
+4.  Deleuze, G. (1992). Postscript on the Societies of Control. _October, 59_, 3-7.
+5.  Dixon-Román, E. (2020). Control Societies @ 30: Technopolitical Forces and Ontologies of Difference. _Social Text Journal_.
+6.  Google. (March 2024). HTTPS Encryption on the Web. _Google Transparency Report_. Retrieved from [https://transparencyreport.google.com/https/overview?hl=en](https://transparencyreport.google.com/https/overview?hl=en)
 
-### Chapter 8:
+## Chapter 8
 
-1.  Tarkoma, S. (2010). *Overlay Networks: Toward Information Networking*. Auerbach Publications.
-2.  Syverson, P., Dingledine, R., & Mathewson, N. (2004). Tor: The Second-Generation Onion Router. Retrieved from https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html
-3.  Allen-Robertson, J. (2013). *Digital Culture Industry: A History Of Digital Distribution*. Springer.
+1.  Tarkoma, S. (2010). _Overlay Networks: Toward Information Networking_. Auerbach Publications.
+2.  Syverson, P., Dingledine, R., & Mathewson, N. (2004). Tor: The Second-Generation Onion Router. Retrieved from [https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html](https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.html)
+3.  Allen-Robertson, J. (2013). _Digital Culture Industry: A History Of Digital Distribution_. Springer.
 
-### Chapter 9:
+## Chapter 9
 
-1.  Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. Retrieved from https://bitcoin.org/bitcoin.pdf
-2.  Bonneau, Joseph. (2015). How Long Does It Take for a Bitcoin Transaction to Be Confirmed?. Retrieved from https://www.coincenter.org/education/crypto-regulation-faq/how-long-does-it-take-for-a-bitcoin-transaction-to-be-confirmed/
-3.  Harding, David. (2020). Miner Fees. Retrieved from https://en.bitcoin.it/wiki/Miner_fees
-4.  Bier, J. (2021) *The Blocksize War: The Battle Over Who Controls Bitcoin’s Protocol Rules*. Independently published.
+1.  Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System. Retrieved from [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)
+2.  Bonneau, Joseph. (2015). How Long Does It Take for a Bitcoin Transaction to Be Confirmed?. Retrieved from [https://www.coincenter.org/education/crypto-regulation-faq/how-long-does-it-take-for-a-bitcoin-transaction-to-be-confirmed/](https://www.coincenter.org/education/crypto-regulation-faq/how-long-does-it-take-for-a-bitcoin-transaction-to-be-confirmed/)
+3.  Harding, David. (2020). Miner Fees. Retrieved from [https://en.bitcoin.it/wiki/Miner_fees](https://en.bitcoin.it/wiki/Miner_fees)
+4.  Bier, J. (2021) _The Blocksize War: The Battle Over Who Controls Bitcoin’s Protocol Rules_. Independently published.
 
-### Chapter 10:
+## Chapter 10
 
-1.  Ward, Colin. (2004). *Anarchism: A Very Short Introduction*. Oxford University Press.
-2.  "What Does ICANN Do" (2024). Retreived from https://www.icann.org/resources/pages/welcome-2012-02-25-en
-3.  "Network Protocols And Standards, CCNA Routing and Switching Study Course 1". (2024) Cisco Press. Retrieved from http://cisco.num.edu.mn/CCNA_R&S1/course/module3/3.2.3.2/3.2.3.2.html.
-4.  W3C. (March 1, 2024)). World Wide Web Consortium (W3C). Retrieved from https://www.w3.org/
-5.  Matthewson, N. (Feb 8, 2015). "Tor design proposals: how we make changes to our protocol". Retrieved from https://blog.torproject.org/tor-design-proposals-how-we-make-changes-our-protocol/.
-6.  Harrison, D. (Jan 10, 2008). "Index of BitTorrent Enhancement Proposals". Retrieved from https://www.bittorrent.org/beps/bep_0000.html.
-7.  Rochard, P. (July 8, 2018). "Bitcoin Governance". Retrieved from https://pierre-rochard.medium.com/bitcoin-governance-37e86299470f.
-8.  Clark, D. D., Wroclawski, J., Sollins, K. R., & Braden, R. (2005). Tussle in cyberspace: defining tomorrow's internet. *IEEE/ACM transactions on networking, 13(3)*, 462-475.
-9.  Willke. Helmut, as quoted in Jessop, B. (2015). *The State: Past, present, future*. John Wiley & Son
-10. Perritt Jr., H. H. (1998). The Internet as a Threat to Sovereignty? Thoughts on the Internet's Role in Strengthening National and Global Governance. *John Marshall Journal of Computer & Information Law, 16(2).*
-11. Pratt, M. L. (2012). Arts of the contact zone. In *Negotiating academic literacies* (pp. 171-185). Routledge.
-12. Canetti, E. (1984). *Crowds and power*. Macmillan.
-13. Gittlen, S. (1998). Taking the wrong root. *Network World*. Com. Retrieved from https://web.archive.org/web/20120308200824/http://www.networkworld.com/news/0204postel.html
-14. Froomkin, A. M. (2000). Wrong Turn in Cyberspace: Using ICANN to Route around the APA and the Constitution. *Duke LJ, 50*, 17.
+1.  Ward, Colin. (2004). _Anarchism: A Very Short Introduction_. Oxford University Press.
+2.  "What Does ICANN Do" (2024). Retreived from [https://www.icann.org/resources/pages/welcome-2012-02-25-en](https://www.icann.org/resources/pages/welcome-2012-02-25-en)
+3.  "Network Protocols And Standards, CCNA Routing and Switching Study Course 1". (2024) Cisco Press. Retrieved from [http://cisco.num.edu.mn/CCNA_R&S1/course/module3/3.2.3.2/3.2.3.2.html](http://cisco.num.edu.mn/CCNA_R&S1/course/module3/3.2.3.2/3.2.3.2.html).
+4.  W3C. (March 1, 2024). World Wide Web Consortium (W3C). Retrieved from [https://www.w3.org/](https://www.w3.org/)
+5.  Matthewson, N. (Feb 8, 2015). "Tor design proposals: how we make changes to our protocol". Retrieved from [https://blog.torproject.org/tor-design-proposals-how-we-make-changes-our-protocol/](https://blog.torproject.org/tor-design-proposals-how-we-make-changes-our-protocol/).
+6.  Harrison, D. (Jan 10, 2008). "Index of BitTorrent Enhancement Proposals". Retrieved from [https://www.bittorrent.org/beps/bep_0000.html](https://www.bittorrent.org/beps/bep_0000.html).
+7.  Rochard, P. (July 8, 2018). "Bitcoin Governance". Retrieved from [https://pierre-rochard.medium.com/bitcoin-governance-37e86299470f](https://pierre-rochard.medium.com/bitcoin-governance-37e86299470f).
+8.  Clark, D. D., Wroclawski, J., Sollins, K. R., & Braden, R. (2005). Tussle in cyberspace: defining tomorrow's internet. _IEEE/ACM transactions on networking, 13(3)_, 462-475.
+9.  Willke. Helmut, as quoted in Jessop, B. (2015). _The State: Past, present, future_. John Wiley & Son
+10. Perritt Jr., H. H. (1998). The Internet as a Threat to Sovereignty? Thoughts on the Internet's Role in Strengthening National and Global Governance. _John Marshall Journal of Computer & Information Law, 16(2)._
+11. Pratt, M. L. (2012). Arts of the contact zone. In _Negotiating academic literacies_ (pp. 171-185). Routledge.
+12. Canetti, E. (1984). _Crowds and power_. Macmillan.
+13. Gittlen, S. (1998). Taking the wrong root. _Network World_. Com. Retrieved from [https://web.archive.org/web/20120308200824/http://www.networkworld.com/news/0204postel.html](https://web.archive.org/web/20120308200824/http://www.networkworld.com/news/0204postel.html)
+14. Froomkin, A. M. (2000). Wrong Turn in Cyberspace: Using ICANN to Route around the APA and the Constitution. _Duke LJ, 50_, 17.
 15. Postel, Jon. Personal communication, January 27, 1998.
-16. Weinberg, J. (2000). ICANN and the Problem of Legitimacy. *Duke LJ, 50*, 187.
-17. Cerf, V. (October 1998). "RFC 2468: I remember IANA" Request for Comments. https://www.rfc-editor.org/rfc/rfc2468.txt
-18. Protests Against SOPA and PIPA. (March 21st, 2024). In *Wikipedia*. Retrieved from https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA
-
+16. Weinberg, J. (2000). ICANN and the Problem of Legitimacy. _Duke LJ, 50_, 187.
+17. Cerf, V. (October 1998). "RFC 2468: I remember IANA" Request for Comments. [https://www.rfc-editor.org/rfc/rfc2468.txt](https://www.rfc-editor.org/rfc/rfc2468.txt)
+18. Protests Against SOPA and PIPA. (March 21st, 2024). In _Wikipedia_. Retrieved from [https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA](https://en.wikipedia.org/wiki/Protests_against_SOPA_and_PIPA)

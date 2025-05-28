@@ -1,0 +1,15 @@
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{lipsum} % Optional: remove if unused
+\newcommand{\insertcover}{
+  \clearpage
+  \thispagestyle{empty}
+  \AddToShipoutPicture*{%
+    \put(0,0){%
+      \includegraphics[width=\paperwidth,height=\paperheight]{src/images/smp_cover.png}
+    }
+  }
+  \null
+  \clearpage
+}
+\AtBeginDocument{\insertcover}
